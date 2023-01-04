@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Fonts -->
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+
+    <!-- Slider  -->
+    <link rel=stylesheet href='plugins/flexslider/flexslider.css' type=text/css
+    media=all>
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  </head>
+  <body class="text-slate-50 relative font-hind">
+    <header class="relative z-50 overflow-visible">
+      <!-- Header Top -->
+      <div class="header-top bg-default-black text-slate-50 py-8">
+        <div class="container">
+          <div
+            class="content py-2 grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
+          >
+            <div class="header-logo md:col-span-2 md:justify-self-end flex justify-center">
+              <a href="#">
+                <img
+                  class="max-w-[12rem]"
+                  src="./images/header/logo.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!-- Contact Info -->
+            <div class="contact-info flex flex-col gap-2 items-center md:items-end md:col-span-1">
+              <div class="number flex items-center gap-4">
+                <span><img src="images/header/phone-icon.png" alt="" /></span>
+                <span>(1)-212-333-4343</span>
+              </div>
+              <div class="email flex items-center gap-4">
+                <span
+                  ><img src="images/header/envelope-icon.png" alt=""
+                /></span>
+                <span>reserve@limokingtheme.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Header Bottom -->
+      <!-- Large Screen -->
+      <div uk-sticky="bottom: #offset" class="hidden md:block transition-all duration-500 header-bottom  bg-zinc-900/80 z-50 backdrop-blur-xl">
+        <div class="container flex justify-end">
+          <div class="float-right flex gap-20 md:gap-56 py-5 text-zinc-300">
+            <div class="nav uppercase font-medium text-sm">
+              <ul class="flex justify-center items-center gap-10 sticky">
+                <li><a href="#">home</a></li>
+                <li><a href="#">page</a></li>
+                <li><a href="#">our fleet</a></li>
+                <li><a href="#">service rate</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">blog</a></li>
+              </ul>
+            </div>
+
+            <div class="search">
+              <img
+                class="max-w-[1.3rem]"
+                src="./images/header/magnifier-light.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="swiper home-slider -mt-[61px]">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide slide one min-h-screen bg-cover bg-center"
+          >
+            <div class="content">
+              <h3>do you know how pleasure tastes?</h3>
+              <a href="#" class="btn">get started</a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide slide two min-h-screen bg-cover bg-center"
+          >
+            <div class="content">
+              <h3>do you know how pleasure tastes?</h3>
+              <a href="#" class="btn">get started</a>
+            </div>
+          </div>
+          <div
+            class="swiper-slide slide three min-h-screen bg-cover bg-center"
+          >
+            <div class="content">
+              <h3>do you know how pleasure tastes?</h3>
+              <a href="#" class="btn">get started</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-button-next text-slate-50"></div>
+        <div class="swiper-button-prev text-slate-50"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </main>
+
+    <!-- Section-1 -->
+    <section class="cars cars_bg h-[600px] text-slate-50 overflow-hidden">
+      <div class="container">
+        <div class="cars_content flex flex-col items-center text-center">
+          <div class="header">
+            <h1 class="uppercase py-5 text-4xl font-bold">
+              we service you like a king
+            </h1>
+          </div>
+          <div
+            class="star flex gap-4 relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[200%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[200%]"
+          >
+            <i class="fa fa-star"></i>
+          </div>
+          <p class="mt-5">
+            We offer you a super VIP experience in middle of New York.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Section 2 -->
+    <section>
+      <div class="container">
+        <div class="cars_slider_content flex flex-col items-center">
+          <div class="header">
+            <h2 class="uppercase text-3xl text-slate-900 font-bold">
+              Our Fleet
+            </h2>
+          </div>
+
+          <div class="slider_btn mt-10 text-slate-900 flex items-center gap-32">
+            <button
+              class="prev_btn angel_left text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
+            >
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <!-- Car icon -->
+            <div
+              class="car flex gap-4 relative before:block before:absolute before:bg-slate-900/30 before:w-16 before:h-[1px] before:top-[50%] before:right-[200%] after:block after:absolute after:bg-slate-900/30 after:w-16 after:h-[1px] after:top-[50%] after:left-[200%]"
+            >
+              <i class="fa fa-car"></i>
+            </div>
+            <button
+              class="next_btn angel_right text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
+            >
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
+
+          <div class="car_slider owl-carousel owl-theme">
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-11.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-21.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-31.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-41.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-51.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-61.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-71.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-81.jpg" alt="" />
+              </div>
+            </div>
+            <div class="item relative">
+              <div
+                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+              >
+                <a
+                  href="#"
+                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
+                  ><i class="fa fa-link"></i
+                ></a>
+              </div>
+              <div class="car_img">
+                <img src="./images/cars/car-91.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="about pb-0">
+      <div class="about_top about_bg py-20">
+        <div class="container">
+          <div class="content">
+            <div class="header">
+              <h2
+                class="uppercase relative text-3xl font-bold after:block after:mt-6 after:w-32 after:h-[2px] after:bg-default-color"
+              >
+                we promise, you will<br />have the best experience
+              </h2>
+            </div>
+            <p class="text-xs mt-10 text-gray-300">
+              Sed posuere consectetur est at lobortis. Cum sociis natoque
+              penatibus et magnis dis <br />
+              parturient montes, nascetur ridiculus mus. Nullam quis risus eget
+              urna mollis ornare vel eu <br />
+              leo. Cras mattis consectetur purus sit amet fermentum.
+            </p>
+          </div>
+
+          <a href="#" class="font-monster">
+            <button class="mt-10 text-xl py-3 px-5 rounded-sm bg-default-color">
+              Book Now
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="about_bottom bg-default-color pt-6 md:pt-0">
+        <div class="container">
+          <div
+            class="content flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4"
+          >
+            <h3 class="uppercase font-bold text-2xl">what about pricing?</h3>
+            <span class="text-sm"
+              >Don’t worry. We provide very nice deals and the most competative
+              price just for you!</span
+            >
+            <a href="#" class="bg-[#259FBD] py-10 px-5">
+              <button class="font-monster">check rate</button>
+              <i class="ml-2 fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Service -->
+    <section class="py-0">
+      <div class="service_top service_bg py-14">
+        <div class="container">
+          <div
+            class="content flex flex-col justify-center items-center text-center gap-4"
+          >
+            <h2
+              class="uppercase font-bold text-2xl relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[115%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[115%]"
+            >
+              our services
+            </h2>
+            <span class="text-sm">Magna Risus Vestibulum Vulputate</span>
+          </div>
+        </div>
+      </div>
+      <!-- Serivce Bottom -->
+      <div class="service_bottom py-10 text-gray-700">
+        <div class="container">
+          <div
+            class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
+          >
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-11.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">NIGHT PARTIES</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-21.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">WEDDINGS</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-31.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">CASINOS</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-41.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">BIRTHDAYS</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-51.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">PROMS</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+            <div class="item flex gap-5">
+              <div class="icon">
+                <img src="./images/service/service-icon-61.png" alt="icon" />
+              </div>
+              <div class="content grid gap-6">
+                <h3 class="uppercase text-xl font-bold">AIRPORT TRANSFERS</h3>
+                <p class="text-gray-500 text-sm">
+                  Limos King offers superb lim service in New York and
+                  Manhatatan. We are the most popular and has been chosen by
+                  many important people. We also provide premier service to the
+                  airport, wedding, casino, sport event, proms etc.
+                </p>
+
+                <a href="#" class="capitalize text-default-color font-monster"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section class="py-5 md:py-0 relative">
+      <video autoplay muted loop id="myVideo">
+        <source
+          src="./images/contact/service-video-bg-n.webm"
+          type="video/webm"
+        />
+        Your browser does not support HTML5 video.
+      </video>
+      <div class="container">
+        <div
+          class="content flex flex-col justify-center gap-2 sm:gap-4 md:gap-10 items-center absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        >
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold uppercase">
+            or anywhere you need us to take
+          </h2>
+          <span class="text-sm md:text-md"
+            >Not only taking to night parties, wedding, casinos, birthdays, but
+            <br />
+            we also take you to anywhere you want to go.</span
+          >
+
+          <div
+            class="call_now flex justify-center items-center gap-4 text-xl md:text-3xl"
+          >
+            <span class="uppercase">Call Now</span>
+            <span>(1)-212-333-4343</span>
+          </div>
+
+          <div class="or relative">
+            <h5
+              class="uppercase flex font-monster text-default-color text-lg md:text-xl gap-4 relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[140%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[140%]"
+            >
+              OR
+            </h5>
+          </div>
+
+          <a href="#">
+            <button
+              class="bg-default-color capitalize font-monster py-2 px-3 md:py-3 md:px-5 rounded-sm"
+            >
+              Book online
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Car Names -->
+    <section class="brand py-4">
+      <div class="container">
+        <div class="car_brands flex justify-center gap-4">
+          <div class="brand_img">
+            <img src="./images/carBrand/banner-11.png" alt="banner" />
+          </div>
+          <div class="brand_img">
+            <img src="./images/carBrand/banner-21.png" alt="banner" />
+          </div>
+          <div class="brand_img">
+            <img src="./images/carBrand/banner-31.png" alt="banner" />
+          </div>
+          <div class="brand_img">
+            <img src="./images/carBrand/banner-41.png" alt="banner" />
+          </div>
+          <div class="brand_img">
+            <img src="./images/carBrand/banner-51.png" alt="banner" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section>
+      <div class="container">
+        <div
+          class="content grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-gray-800"
+        >
+          <!-- Video -->
+          <div class="video grid gap-10">
+            <h2 class="uppercase text-xl font-semibold">video tour</h2>
+            <div class="video-wrapper">
+              <iframe
+                src="http://player.vimeo.com/video/45345886?title=0&amp;byline=0&amp;portrait=0"
+              ></iframe>
+            </div>
+          </div>
+          <!-- Testimonial Carousel -->
+          <div class="testimonial grid gap-10">
+            <div class="flex justify-between">
+              <h2 class="uppercase text-xl font-semibold">testimonial</h2>
+              <div class="arrows flex gap-6">
+                <button>
+                  <i
+                    class="left_btn flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-left"
+                  ></i>
+                </button>
+                <button>
+                  <i
+                    class="right_btn flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-right"
+                  ></i>
+                </button>
+              </div>
+            </div>
+            <!-- Sider -->
+            <div class="testi_slider">
+              <div class="item">
+                <article class="testimonial grid gap-6 text-gray-500">
+                  <div class="quotes text-lg flex">
+                    <div
+                      class="left relative font_myt before:block before:absolute before:top-12 before:-left-4 before:text-default-color before:text-[10rem] before:content-['“']"
+                    ></div>
+                    <p class="font-monster pl-10 text-[1rem]">
+                      Cras justo odio, dapibus ac facilisis in, egestas eget
+                      quam. Curabit,ur blandit tempus porttitor. Praesent
+                      commodo cursus magna.
+                    </p>
+                  </div>
+                  <div class="author flex items-center gap-5 pl-10">
+                    <img
+                      class="rounded-full w-12"
+                      src="./images/testimonial/testimonial-s-11-150x150.jpg"
+                      alt="author"
+                    />
+                    <div class="name">
+                      <h4
+                        class="uppercase text-sm text-default-color font-semibold"
+                      >
+                        sam smith
+                      </h4>
+                      <span class="text-xs">General Manager, Coca Co.</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+          <!-- News -->
+          <div class="news flex flex-col gap-8">
+            <div class="header flex justify-between">
+              <h2 class="uppercase text-xl font-semibold">testimonial</h2>
+              <a
+                href="#"
+                class="capitalize text-sm text-default-color font-merri italic"
+                >Read all news</a
+              >
+            </div>
+            <div class="items grid gap-4">
+              <div class="item flex gap-4">
+                <a
+                  href="#"
+                  class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
+                >
+                  <img
+                    class="w-16"
+                    src="./images/testimonial/shutterstock_1417049411-400x400.jpg"
+                    alt="news_img"
+                  />
+                </a>
+                <div class="head_line grid text-sm gap-2">
+                  <a
+                    href="#"
+                    class="uppercase font-monster font-bold hover:text-default-color transition-colors text-zinc-700"
+                    >SEM PORTA MOLLIS PARTURI</a
+                  >
+                  <a
+                    href="#"
+                    class="capitalize text-gray-400 text-sm font-monster"
+                    ><span>21 Mar 2014 / By John Doe</span></a
+                  >
+                </div>
+              </div>
+              <div class="item flex gap-4">
+                <a
+                  href="#"
+                  class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
+                >
+                  <img
+                    class="w-16"
+                    src="./images/testimonial/shutterstock_1579359681-400x400.jpg"
+                    alt="news_img"
+                  />
+                </a>
+                <div class="head_line grid text-sm gap-2">
+                  <a
+                    href="#"
+                    class="uppercase font-monster font-bold hover:text-default-color transition-colors text-zinc-700"
+                    >NULLAM LOREM MATTIS PURUS</a
+                  >
+                  <a
+                    href="#"
+                    class="capitalize text-gray-400 text-sm font-monster"
+                    ><span>21 Mar 2014 / By John Doe</span></a
+                  >
+                </div>
+              </div>
+              <div class="item flex gap-4">
+                <a
+                  href="#"
+                  class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
+                >
+                  <img
+                    class="w-16"
+                    src="./images/testimonial/shutterstock_1746421911-400x400.jpg"
+                    alt="news_img"
+                  />
+                </a>
+                <div class="head_line grid text-sm gap-2">
+                  <a
+                    href="#"
+                    class="uppercase font-monster font-bold hover:text-default-color transition-colors text-zinc-700"
+                    >NIBH SEM SIT ULLAMCORPER</a
+                  >
+                  <a
+                    href="#"
+                    class="capitalize text-gray-400 text-sm font-monster"
+                    ><span>21 Mar 2014 / By John Doe</span></a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom section -->
+    <section class="bg-default-black text-zinc-600">
+      <div class="container">
+        <div
+          class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 text-zinc-300 font-monster"
+        >
+          <!-- About -->
+          <div class="about">
+            <h3 class="uppercase text-sm font-semibold">about us</h3>
+            <div class="flex flex-col gap-4">
+              <p class="text-[0.9rem] mt-7">
+                Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Morbi leo risus, porta
+              </p>
+              <div class="logo">
+                <a href="#">
+                  <img class="w-40" src="./images/bottom/logo.png" alt="logo" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact-info">
+            <h3 class="uppercase text-sm font-semibold">contact info</h3>
+            <div class="info text-sm mt-7 flex flex-col gap-4">
+              <div class="address">
+                <span>Address: 184 Main Collins Street West Victoria 8007</span>
+              </div>
+              <ul class="grid gap-2">
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-phone"></i>
+                    <span>+1800-222-3333</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-mobile"></i>
+                    <span>(1)-212-333-4343</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa-regular fa-envelope"></i>
+                    <span>book@limokingtheme.com</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Recent post -->
+          <div class="recent_post text-sm">
+            <h3 class="uppercase text-sm font-semibold">recent post</h3>
+            <ul class="grid gap-3 mt-7 max-w-[240px]">
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Sem Porta Mollis Parturi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nullam Lorem Mattis Purus</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nibh Sem Sit Ullamcorper</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Donec luctus imperdiet</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Works -->
+          <div class="recent-works">
+            <h3 class="uppercase text-sm font-semibold">recent works</h3>
+
+            <div class="mt-7 grid_img grid grid-cols-3 gap-3 sm:max-w-[230px]">
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1058269641-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1427849831-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1837970511-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_2580348261-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_716302901-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_770756561-150x150.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-zinc-900 py-4 text-sm">
+      <div class="container">
+        <div class="content flex justify-between flex-wrap gap-4">
+          <div class="copyright">
+            <h5 class="capitalize text-zinc-500">
+              Copyright 2022, All Right Reserved
+            </h5>
+          </div>
+          <div class="link_icons">
+            <ul class="flex gap-4 text-md">
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-dribbble"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-pinterest"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-google-plus-g"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./js/vendor/uikit.min.js"></script>
+    <script src="./js/vendor/jquery.min.js"></script>
+    <script src="./js/vendor/owl.carousel.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

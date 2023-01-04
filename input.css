@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  @apply max-w-[70rem] m-auto px-6 overflow-hidden;
+}
+
+section {
+  @apply py-10;
+}
+
+img {
+  @apply max-w-[20rem];
+}
+
+.cars_bg {
+  background-image: url(../images/section_one/fleet-bg-hp1.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Cars section */
+h1 {
+  font-family: "Montserrat";
+}
+
+/* .car_img {
+  opacity: .6;
+} */
+
+/* .car_overlay {
+  opacity: 0;
+}
+
+.car_slider .item:hover .car_overlay {
+  opacity: 1;
+} */
+
+/* About */
+.about_bg {
+  background-image: url(../images/about/about-us-bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Service */
+.service_bg {
+  background-image: url(../images/service/service-title-bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.font_myt {
+  font-family: "Mystery Quest";
+}
+
+.one {
+  background-image: url(../images/main/slider-item-1.jpg);
+}
+.two {
+  background-image: url(../images/main/slider-item-2.jpg);
+
+}
+.three {
+  background-image: url(../images/main/slider-item-3.jpg);
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+/* home */
+@keyframes fadeIn {
+  0% {
+    transform: translateY(-4rem) scale(0);
+    opacity: 0;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  color: white !important
+}
+
