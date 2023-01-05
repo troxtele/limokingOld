@@ -30,17 +30,9 @@ h1 {
   font-family: "Montserrat";
 }
 
-/* .car_img {
-  opacity: .6;
-} */
-
-/* .car_overlay {
-  opacity: 0;
-}
-
-.car_slider .item:hover .car_overlay {
+.car_overlay:hover .round_btn {
   opacity: 1;
-} */
+}
 
 /* About */
 .about_bg {
@@ -60,34 +52,53 @@ h1 {
   font-family: "Mystery Quest";
 }
 
+/* Main */
 .one {
   background-image: url(../images/main/slider-item-1.jpg);
 }
 .two {
   background-image: url(../images/main/slider-item-2.jpg);
-
 }
 .three {
   background-image: url(../images/main/slider-item-3.jpg);
 }
 
-.swiper-wrapper {
-  transition-timing-function: linear;
+/* Car slider */
+.left_0 {
+  left: 0;
+}
+/* Swiper Slider */
+.swiper-pagination-bullet-active {
+  background: #00ffc8;
+  opacity: 0.4 !important;
 }
 
-/* home */
-@keyframes fadeIn {
-  0% {
-    transform: translateY(-4rem) scale(0);
-    opacity: 0;
-  }
+.swiper-pagination-bullet {
+  width: 30%;
+  color: rgb(255, 0, 0);
+  opacity: 0.2;
+  height: 5px;
+  border-radius: 0px;
 }
 
+.swiper-pagination {
+  top: 0px;
+  height: min-content;
+}
 .swiper-button-next,
 .swiper-button-prev {
+  margin: 0 0.5rem;
   height: 5rem;
   width: 5rem;
   line-height: 5rem;
-  color: white !important
+  color: white !important;
 }
 
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    margin: 0;
+    height: 2rem;
+    width: 2rem;
+  }
+}

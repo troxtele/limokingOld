@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>LimoKing</title>
     <!-- Fonts -->
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
@@ -15,19 +15,19 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
       rel="stylesheet"
     />
+    <!-- Mystery Font -->
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
-
-    <!-- Slider  -->
-    <link rel=stylesheet href='plugins/flexslider/flexslider.css' type=text/css
-    media=all>
-
+    <!-- Raleway font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -36,8 +36,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="./dist/output.css" />
+
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="./css/owl.carousel.min.css" />
     <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
@@ -47,16 +46,25 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" href="./css/slick.css" />
+    <link rel="stylesheet" href="./css/slick-theme.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
   </head>
-  <body class="text-slate-50 relative font-hind">
-    <header class="relative z-50 overflow-visible">
+  <body class="text-slate-50 font-hind relative">
+    <header class="z-40 relative">
       <!-- Header Top -->
-      <div class="header-top bg-default-black text-slate-50 py-8">
+      <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
         <div class="container">
           <div
-            class="content py-2 grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
+            class="content py-2 flex flex-col-reverse md:grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
           >
-            <div class="header-logo md:col-span-2 md:justify-self-end flex justify-center">
+            <!-- Logo -->
+            <div
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center"
+            >
               <a href="#">
                 <img
                   class="max-w-[12rem]"
@@ -66,7 +74,9 @@
               </a>
             </div>
             <!-- Contact Info -->
-            <div class="contact-info flex flex-col gap-2 items-center md:items-end md:col-span-1">
+            <div
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col md:gap-2 justify-center gap-2 md:justify-between items-center md:items-end md:col-span-1"
+            >
               <div class="number flex items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
                 <span>(1)-212-333-4343</span>
@@ -81,66 +91,157 @@
           </div>
         </div>
       </div>
-      <!-- Header Bottom -->
-      <!-- Large Screen -->
-      <div uk-sticky="bottom: #offset" class="hidden md:block transition-all duration-500 header-bottom  bg-zinc-900/80 z-50 backdrop-blur-xl">
-        <div class="container flex justify-end">
-          <div class="float-right flex gap-20 md:gap-56 py-5 text-zinc-300">
-            <div class="nav uppercase font-medium text-sm">
-              <ul class="flex justify-center items-center gap-10 sticky">
-                <li><a href="#">home</a></li>
-                <li><a href="#">page</a></li>
-                <li><a href="#">our fleet</a></li>
-                <li><a href="#">service rate</a></li>
-                <li><a href="#">portfolio</a></li>
-                <li><a href="#">blog</a></li>
-              </ul>
-            </div>
-
-            <div class="search">
-              <img
-                class="max-w-[1.3rem]"
-                src="./images/header/magnifier-light.png"
-                alt=""
-              />
-            </div>
+    </header>
+    <!-- Navbar -->
+    <!-- Large Screen -->
+    <nav
+      class="hidden md:block sticky top-0 transition-all duration-500 bg-zinc-900/80 z-50 backdrop-blur-xl"
+    >
+      <div class="container flex justify-end">
+        <div class="float-right flex gap-20 md:gap-56 py-5 text-zinc-300">
+          <div class="nav uppercase font-medium text-sm">
+            <ul class="flex justify-center items-center gap-10">
+              <li><a href="#">home</a></li>
+              <li><a href="#">page</a></li>
+              <li><a href="#">our fleet</a></li>
+              <li><a href="#">service rate</a></li>
+              <li><a href="#">portfolio</a></li>
+              <li><a href="#">blog</a></li>
+            </ul>
+          </div>
+          <!-- Search Button -->
+          <div class="search">
+            <img
+              class="max-w-[1.3rem]"
+              src="./images/header/magnifier-light.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
-    </header>
+    </nav>
+    <!-- Small Screen -->
+    <nav class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 z-50">
+      <div class="container">
+        <div class="flex justify-between items-center py-3 sm:py-5">
+          <div class="nav_logo">
+            <img class="w-28" src="./images/header/logo.png" alt="logo" />
+          </div>
+          <div class="nav">
+            <!-- Nav btn -->
+            <div
+              class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+            >
+              <span class="line w-8 h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+            </div>
+            <!-- Nav links -->
+            <ul
+              class="nav_links absolute w-screen max-w-[50%] sm:max-w-[30%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+            >
+              <li><a href="#">home</a></li>
+              <li class="border-bottom flex justify-between items-center">
+                <a href="#">page</a> <i class="fa-solid fa-arrow-right"></i>
+              </li>
+              <li class="border-bottom flex justify-between items-center">
+                <a href="#">our fleet</a>
+                <i class="fa-solid fa-arrow-right"></i>
+              </li>
+              <li><a href="#">service rate</a></li>
+              <li class="border-bottom flex justify-between items-center">
+                <a href="#">portfolio</a>
+                <i class="fa-solid fa-arrow-right"></i>
+              </li>
+              <li class="border-bottom flex justify-between items-center">
+                <a href="#">blog</a>
+                <i class="fa-solid fa-arrow-right"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
-      <div class="swiper home-slider -mt-[61px]">
+      <div class="swiper home-slider md:-mt-[61px] text-slate-50">
         <div class="swiper-wrapper">
           <div
-            class="swiper-slide slide one min-h-screen bg-cover bg-center"
+            class="swiper-slide slide one min-h-screen w-full bg-cover bg-center flex justify-center items-center"
           >
-            <div class="content">
-              <h3>do you know how pleasure tastes?</h3>
-              <a href="#" class="btn">get started</a>
+            <div class="content text-center grid gap-4">
+              <h2
+                class="capitalize font-raleway text-2xl xs:text-4xl sm:text-5xl md:text-6xl text-cyan-400 font-semibold"
+              >
+                the best limos
+              </h2>
+              <h3
+                class="capitalize text-cyan-200 text-2xl xs:text-3xl sm:text-4xl md:text-5xl"
+              >
+                in new york
+              </h3>
+              <h1
+                class="uppercase font-bold text-3xl xs:text-5xl sm:text-7xl md:text-9xl"
+              >
+                Limo king
+              </h1>
+              <div class="learn_more flex gap-6 justify-center items-center">
+                <div class="grid gap-1">
+                  <div class="h-[2px] w-10 md:w-16 bg-slate-50"></div>
+                  <div class="h-[1px] w-10 md:w-16 bg-slate-50"></div>
+                </div>
+                <span class="font-merri capitalize text-md sm:text-xl"
+                  >learn more</span
+                >
+                <div class="grid gap-1">
+                  <div class="h-[2px] w-10 md:w-16 bg-slate-50"></div>
+                  <div class="h-[1px] w-10 md:w-16 bg-slate-50"></div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div
-            class="swiper-slide slide two min-h-screen bg-cover bg-center"
+            class="swiper-slide slide two min-h-screen bg-cover bg-center flex items-center md:items-end"
           >
-            <div class="content">
-              <h3>do you know how pleasure tastes?</h3>
-              <a href="#" class="btn">get started</a>
+            <div
+              class="content grid gap-1 md:gap-4 md:ml-24 md:mb-32 px-14 md:px-0"
+            >
+              <h1 class="text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold">
+                We Are #1 Limo Services
+              </h1>
+              <div class="text-slate-200 text-sm md:text-md">
+                Limos King offers superb limo service in New York and
+                Manhatatan. &nbsp;We are the most popular and has <br />been
+                chosen by many important people. We also provide premier service
+                to the airport, wedding, <br />casino, sport event, proms etc.
+              </div>
+
+              <div class="btn capitalize font-merri mt-6">
+                <a
+                  href="#"
+                  class="bg-default-color text-sm md:text-md py-2 px-3 sm:py-3 sm:px-5 rounded-md"
+                  >see our fleet</a
+                >
+              </div>
             </div>
           </div>
+
           <div
-            class="swiper-slide slide three min-h-screen bg-cover bg-center"
+            class="swiper-slide slide three min-h-screen bg-cover bg-center flex justify-center items-center mb:items-end"
           >
-            <div class="content">
-              <h3>do you know how pleasure tastes?</h3>
-              <a href="#" class="btn">get started</a>
+            <div
+              class="conten mb-10 sm:mb-24 mb:mb-32 flex flex-col gap-4 justify-center items-center text-2xl xs:text-4xl sm:text-5xl md:text-7xl capitalize font-semibold"
+            >
+              <h1 class="">give yourself</h1>
+              <span class="w-6 sm:w-10 h-1 rounded-md bg-slate-50"></span>
+              <h1 class="text-default-color">A new experience</h1>
             </div>
           </div>
         </div>
 
         <div class="swiper-button-next text-slate-50"></div>
         <div class="swiper-button-prev text-slate-50"></div>
-        <div class="swiper-pagination"></div>
       </div>
     </main>
 
@@ -174,7 +275,9 @@
             </h2>
           </div>
 
-          <div class="slider_btn mt-10 text-slate-900 flex items-center gap-32">
+          <div
+            class="slider_btn mt-10 text-slate-900 flex items-center gap-20 sm:gap-24 md:gap-28"
+          >
             <button
               class="prev_btn angel_left text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
             >
@@ -182,7 +285,7 @@
             </button>
             <!-- Car icon -->
             <div
-              class="car flex gap-4 relative before:block before:absolute before:bg-slate-900/30 before:w-16 before:h-[1px] before:top-[50%] before:right-[200%] after:block after:absolute after:bg-slate-900/30 after:w-16 after:h-[1px] after:top-[50%] after:left-[200%]"
+              class="car flex gap-4 relative before:block before:absolute before:bg-slate-900/30 before:w-12 sm:before:w-16 before:h-[1px] before:top-[50%] before:right-[200%] after:block after:absolute after:bg-slate-900/30 after:w-12 sm:after:w-16 after:h-[1px] after:top-[50%] after:left-[200%]"
             >
               <i class="fa fa-car"></i>
             </div>
@@ -193,131 +296,257 @@
             </button>
           </div>
 
-          <div class="car_slider owl-carousel owl-theme">
+          <div
+            class="car_slider text-default-black owl-carousel owl-theme uppercase font-bold"
+          >
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-11.jpg" alt="" />
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-11.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-21.jpg" alt="" />
-              </div>
-            </div>
-            <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-31.jpg" alt="" />
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-21.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-41.jpg" alt="" />
-              </div>
-            </div>
-            <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-51.jpg" alt="" />
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-31.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-61.jpg" alt="" />
-              </div>
-            </div>
-            <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-71.jpg" alt="" />
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-41.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
-              </div>
-              <div class="car_img">
-                <img src="./images/cars/car-81.jpg" alt="" />
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-51.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
             <div class="item relative">
-              <div
-                class="car_overlay absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-              >
-                <a
-                  href="#"
-                  class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full"
-                  ><i class="fa fa-link"></i
-                ></a>
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-61.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
-              <div class="car_img">
-                <img src="./images/cars/car-91.jpg" alt="" />
+            </div>
+            <div class="item relative">
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-71.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
+              </div>
+            </div>
+            <div class="item relative">
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-81.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
+              </div>
+            </div>
+            <div class="item relative">
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-11.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
+              </div>
+            </div>
+            <div class="item relative">
+              <div class="car_img flex flex-col items-center justify-center">
+                <div class="relative">
+                  <div
+                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                  >
+                    <a href="#">
+                      <div
+                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
+                      >
+                        <div
+                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                        >
+                          <i class="fa fa-link"></i>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <img src="./images/cars/car-91.jpg" alt="" />
+                </div>
+                <h3 class="car-title transition-all hover:text-default-color">
+                  <a href="#">Hire This Car</a>
+                </h3>
               </div>
             </div>
           </div>
@@ -346,8 +575,10 @@
             </p>
           </div>
 
-          <a href="#" class="font-monster">
-            <button class="mt-10 text-xl py-3 px-5 rounded-sm bg-default-color">
+          <a href="#">
+            <button
+              class="mt-10 text-xl py-3 px-5 rounded-sm bg-default-color font-merri"
+            >
               Book Now
             </button>
           </a>
@@ -357,15 +588,17 @@
       <div class="about_bottom bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
-            class="content flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4"
+            class="content flex flex-col md:flex-row items-center justify-between gap-4"
           >
-            <h3 class="uppercase font-bold text-2xl">what about pricing?</h3>
-            <span class="text-sm"
+            <h3 class="uppercase font-bold text-2xl text-center">
+              what about pricing?
+            </h3>
+            <span class="text-sm text-center"
               >Don’t worry. We provide very nice deals and the most competative
               price just for you!</span
             >
-            <a href="#" class="bg-[#259FBD] py-10 px-5">
-              <button class="font-monster">check rate</button>
+            <a href="#" class="bg-[#259FBD] py-5 md:py-10 px-4">
+              <button class="font-merri capitalize">check rate</button>
               <i class="ml-2 fa-solid fa-arrow-right-long"></i>
             </a>
           </div>
@@ -407,7 +640,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -425,7 +658,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -443,7 +676,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -461,7 +694,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -479,7 +712,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -497,7 +730,7 @@
                   airport, wedding, casino, sport event, proms etc.
                 </p>
 
-                <a href="#" class="capitalize text-default-color font-monster"
+                <a href="#" class="capitalize text-default-color font-merri"
                   >Read more</a
                 >
               </div>
@@ -507,7 +740,7 @@
       </div>
     </section>
     <!-- Contact -->
-    <section class="py-5 md:py-0 relative">
+    <section class="py-0 relative overflow-hidden">
       <video autoplay muted loop id="myVideo">
         <source
           src="./images/contact/service-video-bg-n.webm"
@@ -517,19 +750,19 @@
       </video>
       <div class="container">
         <div
-          class="content flex flex-col justify-center gap-2 sm:gap-4 md:gap-10 items-center absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          class="content flex flex-col justify-center sm:gap-4 md:gap-10 items-center absolute w-full text-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         >
-          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold uppercase">
+          <h2 class="text-md xs:text-3xl md:text-5xl font-bold uppercase">
             or anywhere you need us to take
           </h2>
-          <span class="text-sm md:text-md"
+          <span class="text-xs xs:text-sm md:text-md"
             >Not only taking to night parties, wedding, casinos, birthdays, but
             <br />
             we also take you to anywhere you want to go.</span
           >
 
           <div
-            class="call_now flex justify-center items-center gap-4 text-xl md:text-3xl"
+            class="call_now flex justify-center items-center gap-4 text-md xs:text-xl md:text-3xl"
           >
             <span class="uppercase">Call Now</span>
             <span>(1)-212-333-4343</span>
@@ -537,7 +770,7 @@
 
           <div class="or relative">
             <h5
-              class="uppercase flex font-monster text-default-color text-lg md:text-xl gap-4 relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[140%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[140%]"
+              class="uppercase flex font-monster text-default-color text-sm xs:text-lg md:text-xl gap-4 relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[140%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[140%]"
             >
               OR
             </h5>
@@ -545,7 +778,7 @@
 
           <a href="#">
             <button
-              class="bg-default-color capitalize font-monster py-2 px-3 md:py-3 md:px-5 rounded-sm"
+              class="text-sm xs:text-md bg-default-color capitalize font-merri py-1 px-2 xs:py-2 xs:px-3 md:py-3 md:px-5 rounded-sm"
             >
               Book online
             </button>
@@ -554,24 +787,44 @@
       </div>
     </section>
 
-    <!-- Car Names -->
-    <section class="brand py-4">
+    <!-- Brand Names -->
+    <section class="brand py-4 bg-stone-200/70">
       <div class="container">
-        <div class="car_brands flex justify-center gap-4">
-          <div class="brand_img">
-            <img src="./images/carBrand/banner-11.png" alt="banner" />
+        <div class="brand brand_slider">
+          <div class="brand_img flex justify-center items-center">
+            <img
+              class="w-full"
+              src="./images/carBrand/banner-11.png"
+              alt="banner"
+            />
           </div>
-          <div class="brand_img">
-            <img src="./images/carBrand/banner-21.png" alt="banner" />
+          <div class="brand_img flex justify-center items-center">
+            <img
+              class="w-full"
+              src="./images/carBrand/banner-21.png"
+              alt="banner"
+            />
           </div>
-          <div class="brand_img">
-            <img src="./images/carBrand/banner-31.png" alt="banner" />
+          <div class="brand_img flex justify-center items-center">
+            <img
+              class="w-full"
+              src="./images/carBrand/banner-31.png"
+              alt="banner"
+            />
           </div>
-          <div class="brand_img">
-            <img src="./images/carBrand/banner-41.png" alt="banner" />
+          <div class="brand_img flex justify-center items-center">
+            <img
+              class="w-full"
+              src="./images/carBrand/banner-41.png"
+              alt="banner"
+            />
           </div>
-          <div class="brand_img">
-            <img src="./images/carBrand/banner-51.png" alt="banner" />
+          <div class="brand_img flex justify-center items-center">
+            <img
+              class="w-full"
+              src="./images/carBrand/banner-51.png"
+              alt="banner"
+            />
           </div>
         </div>
       </div>
@@ -581,15 +834,19 @@
     <section>
       <div class="container">
         <div
-          class="content grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-gray-800"
+          class="content max-w-[26rem] sm:max-w-none grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-gray-800"
         >
           <!-- Video -->
-          <div class="video grid gap-10">
+          <div class="video flex flex-col gap-10">
             <h2 class="uppercase text-xl font-semibold">video tour</h2>
             <div class="video-wrapper">
               <iframe
-                src="http://player.vimeo.com/video/45345886?title=0&amp;byline=0&amp;portrait=0"
+                class="w-full aspect-video"
+                src="./images/contact/service-video-bg-n.webm"
               ></iframe>
+              <h4 class="mt-4 text-default-color text-md font-semibold">
+                Watch our fleet in this video
+              </h4>
             </div>
           </div>
           <!-- Testimonial Carousel -->
@@ -610,37 +867,71 @@
               </div>
             </div>
             <!-- Sider -->
-            <div class="testi_slider">
-              <div class="item">
-                <article class="testimonial grid gap-6 text-gray-500">
-                  <div class="quotes text-lg flex">
-                    <div
-                      class="left relative font_myt before:block before:absolute before:top-12 before:-left-4 before:text-default-color before:text-[10rem] before:content-['“']"
-                    ></div>
-                    <p class="font-monster pl-10 text-[1rem]">
-                      Cras justo odio, dapibus ac facilisis in, egestas eget
-                      quam. Curabit,ur blandit tempus porttitor. Praesent
-                      commodo cursus magna.
-                    </p>
-                  </div>
-                  <div class="author flex items-center gap-5 pl-10">
-                    <img
-                      class="rounded-full w-12"
-                      src="./images/testimonial/testimonial-s-11-150x150.jpg"
-                      alt="author"
-                    />
-                    <div class="name">
-                      <h4
-                        class="uppercase text-sm text-default-color font-semibold"
-                      >
-                        sam smith
-                      </h4>
-                      <span class="text-xs">General Manager, Coca Co.</span>
+            <div class="swiper test w-full h-full">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <article class="testimonial grid gap-6 text-gray-500">
+                    <div class="quotes text-lg flex">
+                      <div
+                        class="left relative font_myt before:block before:absolute before:top-12 before:left-5 before:text-default-color before:text-[8rem] before:content-['“']"
+                      ></div>
+                      <p class="font-monster pl-20 text-[1rem]">
+                        Cras justo odio, dapibus ac facilisis in, egestas eget
+                        quam. Curabit,ur blandit tempus porttitor. Praesent
+                        commodo cursus magna.
+                      </p>
                     </div>
-                  </div>
-                </article>
+                    <div class="author flex items-center gap-5 pl-10">
+                      <img
+                        class="rounded-full w-12"
+                        src="./images/testimonial/testimonial-s-11-150x150.jpg"
+                        alt="author"
+                      />
+                      <div class="name">
+                        <h4
+                          class="uppercase text-sm text-default-color font-semibold"
+                        >
+                          John Doe
+                        </h4>
+                        <span class="text-xs">General Manager, Coca Co.</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div class="swiper-slide">
+                  <article class="testimonial grid gap-6 text-gray-500">
+                    <div class="quotes text-lg flex">
+                      <div
+                        class="left relative font_myt before:block before:absolute before:top-12 before:left-5 before:text-default-color before:text-[8rem] before:content-['“']"
+                      ></div>
+                      <p class="font-monster pl-20 text-[1rem]">
+                        Cras justo odio, dapibus ac facilisis in, egestas eget
+                        quam. Curabit,ur blandit tempus porttitor. Praesent
+                        commodo cursus magna.
+                      </p>
+                    </div>
+                    <div class="author flex items-center gap-5 pl-10">
+                      <img
+                        class="rounded-full w-12"
+                        src="./images/testimonial/testimonial-s-21-150x150.jpg"
+                        alt="author"
+                      />
+                      <div class="name">
+                        <h4
+                          class="uppercase text-sm text-default-color font-semibold"
+                        >
+                          sam smith
+                        </h4>
+                        <span class="text-xs">CEO, The Klise</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
               </div>
             </div>
+            <div class="testi_slider"></div>
           </div>
           <!-- News -->
           <div class="news flex flex-col gap-8">
@@ -828,7 +1119,7 @@
           <div class="recent-works">
             <h3 class="uppercase text-sm font-semibold">recent works</h3>
 
-            <div class="mt-7 grid_img grid grid-cols-3 gap-3 sm:max-w-[230px]">
+            <div class="mt-7 grid_img grid grid-cols-3 gap-3 xs:max-w-[14rem]">
               <a href="#">
                 <img
                   class="w-full"
@@ -934,9 +1225,14 @@
         </div>
       </div>
     </footer>
-    <script src="./js/vendor/uikit.min.js"></script>
+
+    <!-- overlay -->
+    <div
+      class="overlay absolute inset-0 -z-10 transition-all duration-500"
+    ></div>
     <script src="./js/vendor/jquery.min.js"></script>
     <script src="./js/vendor/owl.carousel.min.js"></script>
+    <script src="./js/vendor/slick.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>

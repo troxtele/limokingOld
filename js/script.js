@@ -4,9 +4,11 @@ $(document).ready(function () {
     center: true,
     loop: true,
     margin: 10,
-    nav: true,
-    // autoplay: true,
+    nav: false,
+    navigation: true,
+    autoplay: true,
     autoplayTimeout: 3000,
+    rewind: false,
     responsive: {
       0: {
         items: 1,
@@ -29,40 +31,82 @@ $(document).ready(function () {
   });
 
   // Testilmonial Carousel
-  let testi = $(".testi_slifder");
-  testi.owlCarousel({
-    items: 1,
-    center: true,
+  let brand = $(".car_brands");
+  brand.owlCarousel({
     loop: true,
     margin: 10,
     nav: true,
+    autoWidth: true,
+    dots: false,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 5,
+      },
+    },
+  });
+
+  $(".brand_slider").slick({
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    variableWidth: false,
     // autoplay: true,
-    autoplayTimeout: 3000,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 350,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ],
   });
 
-  // Custom Button
-  $(".left_btn").click(function () {
-    testi.trigger("next.owl.carousel");
-  });
-  $(".right_btn").click(function () {
-    testi.trigger("prev.owl.carousel");
-  });
-
-  // $(window).scroll(function () {
-  //   if ($(window).scrollTop() > 136) {
-  //       console.log("working")
-  //       $(".header-bottom").addClass("bg-zinc-800");
-  //   } else {
-  //     console.log(4)
-  //     $(".header-bottom").removeClass("bg-zinc-800");
-  //     }
-  // })
+  // Nav button
+  const toggleNav = () => {
+    $(".nav_links").toggleClass("left_0");
+    $(".overlay").toggleClass("bg-black/70 z-30");
+  };
+  $(".nav_btn").click(toggleNav);
+  $(".overlay").click(toggleNav);
 });
 
-
-
-var swiper = new Swiper(".home-slider", {
-  speed: 800,
+let swiper = new Swiper(".home-slider", {
+  speed: 1000,
   pagination: {
     el: ".swiper-pagination",
     dynamicBullets: true,
@@ -73,5 +117,15 @@ var swiper = new Swiper(".home-slider", {
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+});
+
+let testiSlide = new Swiper(".test", {
+  speed: 400,
+  loop: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".left_btn",
+    prevEl: ".right_btn",
   },
 });
