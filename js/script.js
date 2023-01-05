@@ -1,4 +1,26 @@
 $(document).ready(function () {
+  $(".nav_links li a").click(function () {
+    $(".nav_links li a").removeClass("active_link");
+    $(this).addClass("active_link");
+  });
+
+  // Search button
+  $(".search_button").click(function () {
+    $(".search_input").toggleClass("h_16")
+  })
+
+  // Nav button
+  const toggleNav = () => {
+    $(".nav_links_small").toggleClass("left_0");
+    $(".overlay").toggleClass("bg-black/70 z-30");
+  };
+  $(".nav_btn").click(toggleNav);
+  $(".overlay").click(toggleNav);
+  $(".nav_links_small li").click(toggleNav);
+});
+
+// Sliders
+$(document).ready(function () {
   let owl = $(".car_slider");
   owl.owlCarousel({
     center: true,
@@ -30,27 +52,6 @@ $(document).ready(function () {
     owl.trigger("prev.owl.carousel");
   });
 
-  // Testilmonial Carousel
-  let brand = $(".car_brands");
-  brand.owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    autoWidth: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 5,
-      },
-    },
-  });
-
   $(".brand_slider").slick({
     dots: false,
     arrows: false,
@@ -59,7 +60,7 @@ $(document).ready(function () {
     slidesToShow: 5,
     slidesToScroll: 1,
     variableWidth: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
       {
@@ -90,42 +91,23 @@ $(document).ready(function () {
           slidesToScroll: 1,
         },
       },
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
     ],
   });
 
-  // Nav button
-  const toggleNav = () => {
-    $(".nav_links").toggleClass("left_0");
-    $(".overlay").toggleClass("bg-black/70 z-30");
-  };
-  $(".nav_btn").click(toggleNav);
-  $(".overlay").click(toggleNav);
+  // Main Slider
+  let swiper = new Swiper(".home-slider", {
+    speed: 1000,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+    loop: true,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 });
 
-let swiper = new Swiper(".home-slider", {
-  speed: 1000,
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-    clickable: true,
-  },
-  loop: true,
-  centeredSlides: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
-let testiSlide = new Swiper(".test", {
-  speed: 400,
-  loop: true,
-  centeredSlides: true,
-  navigation: {
-    nextEl: ".left_btn",
-    prevEl: ".right_btn",
-  },
-});

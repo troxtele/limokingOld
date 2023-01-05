@@ -53,6 +53,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
+
   <body class="text-slate-50 font-hind relative">
     <header class="z-40 relative">
       <!-- Header Top -->
@@ -98,24 +99,59 @@
       class="hidden md:block sticky top-0 transition-all duration-500 bg-zinc-900/80 z-50 backdrop-blur-xl"
     >
       <div class="container flex justify-end">
-        <div class="float-right flex gap-20 md:gap-56 py-5 text-zinc-300">
+        <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
           <div class="nav uppercase font-medium text-sm">
-            <ul class="flex justify-center items-center gap-10">
-              <li><a href="#">home</a></li>
-              <li><a href="#">page</a></li>
-              <li><a href="#">our fleet</a></li>
-              <li><a href="#">service rate</a></li>
-              <li><a href="#">portfolio</a></li>
-              <li><a href="#">blog</a></li>
+            <ul class="nav_links flex justify-center items-center gap-5">
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+              >
+                <a href="#">home</a>
+              </li>
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+              >
+                <a href="#">page</a>
+              </li>
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+              >
+                <a href="#">our fleet</a>
+              </li>
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+              >
+                <a href="#">service rate</a>
+              </li>
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+              >
+                <a href="#">portfolio</a>
+              </li>
+              <li
+                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+              >
+                <a href="#">blog</a>
+              </li>
             </ul>
           </div>
           <!-- Search Button -->
-          <div class="search">
-            <img
-              class="max-w-[1.3rem]"
-              src="./images/header/magnifier-light.png"
-              alt=""
-            />
+          <div class="search relative z-50">
+            <button class="search_button">
+              <img
+                class="max-w-[1.3rem]"
+                src="./images/header/magnifier-light.png"
+                alt=""
+              />
+            </button>
+            <div
+              class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
+            >
+              <input
+                type="text"
+                class="input w-full h-full border-none focus:outline-none bg-transparent placeholder:select-none placeholder:text-slate-200"
+                placeholder="Type keywords"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -138,24 +174,37 @@
             </div>
             <!-- Nav links -->
             <ul
-              class="nav_links absolute w-screen max-w-[50%] sm:max-w-[30%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+              class="nav_links_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
             >
               <li><a href="#">home</a></li>
-              <li class="border-bottom flex justify-between items-center">
-                <a href="#">page</a> <i class="fa-solid fa-arrow-right"></i>
+              <li>
+                <a
+                  href="#"
+                  class="border-bottom flex justify-between items-center border-b border-stone-900/50"
+                  ><span>page</span><i class="fa-solid fa-arrow-right"></i>
+                </a>
               </li>
-              <li class="border-bottom flex justify-between items-center">
-                <a href="#">our fleet</a>
-                <i class="fa-solid fa-arrow-right"></i>
+              <li>
+                <a
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>our fleet</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </li>
               <li><a href="#">service rate</a></li>
-              <li class="border-bottom flex justify-between items-center">
-                <a href="#">portfolio</a>
-                <i class="fa-solid fa-arrow-right"></i>
+              <li>
+                <a
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>portfolio</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </li>
-              <li class="border-bottom flex justify-between items-center">
-                <a href="#">blog</a>
-                <i class="fa-solid fa-arrow-right"></i>
+              <li>
+                <a
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
               </li>
             </ul>
           </div>
@@ -163,7 +212,7 @@
       </div>
     </nav>
 
-    <main>
+    <main class="z-20">
       <div class="swiper home-slider md:-mt-[61px] text-slate-50">
         <div class="swiper-wrapper">
           <div
@@ -239,9 +288,13 @@
             </div>
           </div>
         </div>
-
-        <div class="swiper-button-next text-slate-50"></div>
-        <div class="swiper-button-prev text-slate-50"></div>
+        <div class="swiper-pagination transition-all duration-300 opacity-0"></div>
+        <div
+          class="swiper-button-next next transition-all duration-300"
+        ></div>
+        <div
+          class="swiper-button-prev prev transition-all duration-300"
+        ></div>
       </div>
     </main>
 
@@ -1236,3 +1289,7 @@
     <script src="./js/script.js"></script>
   </body>
 </html>
+
+<!--==================================================-->
+<!-----Start Portfolio Section ----->
+<!--===================================================-->
