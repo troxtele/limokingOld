@@ -748,6 +748,14 @@ video {
   height: 1rem;
 }
 
+.max-h-\[755px\] {
+  max-height: 755px;
+}
+
+.min-h-\[80vh\] {
+  min-height: 80vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1058,6 +1066,11 @@ video {
   background-color: rgb(0 0 0 / 0.7);
 }
 
+.bg-indigo-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 46 129 / var(--tw-bg-opacity));
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -1190,6 +1203,10 @@ video {
 
 .font-monster {
   font-family: Montserrat;
+}
+
+.font-mystery {
+  font-family: Mystery Quest;
 }
 
 .text-sm {
@@ -1457,6 +1474,7 @@ img {
   background-image: url(../images/section_one/fleet-bg-hp1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .car_overlay:hover .round_btn {
@@ -1469,6 +1487,7 @@ img {
   background-image: url(../images/about/about-us-bg1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 /* Service */
@@ -1477,20 +1496,30 @@ img {
   background-image: url(../images/service/service-title-bg1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 /* Main */
 
 .one {
   background-image: url(../images/main/slider-item-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .two {
   background-image: url(../images/main/slider-item-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .three {
   background-image: url(../images/main/slider-item-3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Car slider */
@@ -1520,7 +1549,6 @@ img {
   line-height: 2.5rem;
   --tw-text-opacity: 1;
   color: rgb(248 250 252 / var(--tw-text-opacity));
-  opacity: 0;
 }
 
 main:hover .next,
@@ -1928,6 +1956,10 @@ main:hover .swiper-pagination {
     display: none;
   }
 
+  .md\:min-h-screen {
+    min-height: 100vh;
+  }
+
   .md\:w-16 {
     width: 4rem;
   }
@@ -2049,5 +2081,9 @@ main:hover .swiper-pagination {
   .md\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .md\:opacity-0 {
+    opacity: 0;
   }
 }

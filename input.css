@@ -30,6 +30,7 @@ img {
   background-image: url(../images/section_one/fleet-bg-hp1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+    background-size: cover;
 }
 
 .car_overlay:hover .round_btn {
@@ -41,6 +42,7 @@ img {
   background-image: url(../images/about/about-us-bg1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+    background-size: cover;
 }
 
 /* Service */
@@ -48,17 +50,27 @@ img {
   background-image: url(../images/service/service-title-bg1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+    background-size: cover;
 }
 
 /* Main */
 .one {
   background-image: url(../images/main/slider-item-1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .two {
   background-image: url(../images/main/slider-item-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .three {
   background-image: url(../images/main/slider-item-3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* Car slider */
@@ -67,7 +79,6 @@ img {
 }
 /* Swiper Slider */
 
-
 /* Swiper Slider */
 .swiper-pagination-bullet {
   @apply h-4 w-4 rounded-full bg-slate-50;
@@ -75,7 +86,7 @@ img {
 
 .next,
 .prev {
-  @apply opacity-0 mx-1 h-20 w-20 leading-10 text-slate-50;
+  @apply mx-1 h-20 w-20 leading-10 text-slate-50;
 }
 
 main:hover .next,
