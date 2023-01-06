@@ -23,9 +23,11 @@ section {
 }
 
 img {
-  @apply max-w-[20rem];
+  @apply max-w-[40rem];
 }
 
+
+/*------========------INDEX PAGE------========------  */
 .cars_bg {
   background-image: url(../images/section_one/fleet-bg-hp1.jpg);
   background-repeat: no-repeat;
@@ -77,7 +79,6 @@ img {
 .left_0 {
   @apply left-0;
 }
-/* Swiper Slider */
 
 /* Swiper Slider */
 .swiper-pagination-bullet {
@@ -100,4 +101,70 @@ main:hover .swiper-pagination {
   .prev {
     @apply m-0 h-8 w-8;
   }
+}
+
+/*------========------RATE PAGE------========------  */
+/* About */
+.rate_main_bg {
+  background-image: url(../images/main/rate-main-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.about_bg {
+  background-image: url(../images/about/about-us-bg1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.polygon {
+  clip-path: polygon(50% 80%, 100% 65%, 100% 0, 0 0, 0 65%);
+}
+
+
+/*------========------ABOUT PAGE------========------  */
+
+.about_main_bg {
+  background-image: url(../images/main/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+    background-size: cover;
+}
+.about_skill_bg {
+  background-image: url(../images/skill/skill-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+    background-size: cover;
+}
+
+.car_overlay:hover .round_btn {
+  @apply opacity-100;
+}
+
+/* Progress Bar */
+.item_1 .progress-value {
+  animation: nineZero 3s normal forwards;
+}
+.item_2 .progress-value {
+  animation: hundred 3s normal forwards;
+}
+.item_3 .progress-value {
+  animation: nineFive 3s normal forwards;
+}
+.item_4 .progress-value {
+  animation: hundred 3s normal forwards;
+}
+
+@keyframes nineZero {
+  0% { width: 0; }
+  100% { width: 90%; }
+}
+@keyframes nineFive {
+  0% { width: 0; }
+  100% { width: 95%; }
+}
+@keyframes hundred {
+  0% { width: 0; }
+  100% { width: 100%; }
 }

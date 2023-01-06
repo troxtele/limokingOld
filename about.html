@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LimoKing</title>
+    <!-- Fonts -->
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Mystery Font -->
+    <link rel=stylesheet
+    href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
+    type=text/css media=all>
+    <!-- Raleway font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./dist/output.css" />
+  </head>
+
+  <body class="text-slate-50 font-hind relative">
+    <header class="z-40 relative">
+      <!-- Header Top -->
+      <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
+        <div class="container">
+          <div
+            class="content py-2 flex flex-col-reverse md:grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
+          >
+            <!-- Logo -->
+            <div
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center"
+            >
+              <a href="#">
+                <img
+                  class="max-w-[12rem]"
+                  src="./images/header/logo.png"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <!-- Contact Info -->
+            <div
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col md:gap-2 justify-center gap-2 md:justify-between items-center md:items-end md:col-span-1"
+            >
+              <div class="number flex items-center gap-4">
+                <span><img src="images/header/phone-icon.png" alt="" /></span>
+                <span>(1)-212-333-4343</span>
+              </div>
+              <div class="email flex items-center gap-4">
+                <span
+                  ><img src="images/header/envelope-icon.png" alt=""
+                /></span>
+                <span>reserve@limokingtheme.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Navbar -->
+    <nav class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl">
+      <!-- Large Screen -->
+      <div class="nav_large hidden md:block transition-all duration-500">
+        <div class="container flex justify-end">
+          <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
+            <div class="nav uppercase font-medium text-sm">
+              <ul class="nav_links flex justify-center items-center gap-5">
+                <li class="flex justify-center items-center">
+                  <a
+                    href="index.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >home</a
+                  >
+                </li>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                    >about us</a
+                  >
+                </li>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >our fleet</a
+                  >
+                </li>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="rate.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >service rate</a
+                  >
+                </li>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >portfolio</a
+                  >
+                </li>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- Search Button -->
+            <div class="search relative z-50">
+              <button class="search_button">
+                <img
+                  class="max-w-[1.3rem]"
+                  src="./images/header/magnifier-light.png"
+                  alt=""
+                />
+              </button>
+              <div
+                class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
+              >
+                <input
+                  type="text"
+                  class="input w-full h-full border-none focus:outline-none bg-transparent placeholder:select-none placeholder:text-slate-200"
+                  placeholder="Type keywords"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small Screen -->
+      <div class="md:hidden bg-default-black backdrop-blur-3xl">
+        <div class="container">
+          <div class="flex justify-between items-center py-3 sm:py-5">
+            <div class="nav_logo">
+              <img class="w-28" src="./images/header/logo.png" alt="logo" />
+            </div>
+            <div class="nav">
+              <!-- Nav btn -->
+              <div
+                class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+              >
+                <span class="line w-8 h-[3px] bg-slate-200"></span>
+                <span class="line h-[3px] bg-slate-200"></span>
+                <span class="line h-[3px] bg-slate-200"></span>
+              </div>
+              <!-- Nav links -->
+              <ul
+                class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+              >
+                <li><a href="index.html">home</a></li>
+                <li>
+                  <a
+                    href="about.html"
+                    class="border-bottom flex justify-between items-center border-b border-stone-900/50"
+                    ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="rate.html"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>our fleet</span>
+                    <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+                <li><a href="rate.html">service rate</a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>portfolio</span>
+                    <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Section-1 -->
+    <main
+      class="cars about_main_bg h-[400px] text-slate-50 overflow-hidden -mt-[61px] flex items-end"
+    >
+      <div class="container">
+        <div class="cars_content flex flex-col items-center text-center">
+          <div class="header">
+            <h1 class="uppercase py-5 text-5xl font-bold">About limo king</h1>
+          </div>
+          <div
+            class="star flex gap-4 relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[200%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[200%]"
+          >
+            <i class="fa fa-star"></i>
+          </div>
+          <p class="mt-5 text-lg">
+            We are the most popular limousine service in New York.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Story -->
+    <section>
+      <div class="container">
+        <div
+          class="content text-stone-800 grid md:grid-cols-2 justify-center items-center gap-6"
+        >
+          <div class="story_img">
+            <img
+              class="w-full max-w-lg md:max-w-none"
+              src="./images/story/story-car.png"
+              alt="car"
+            />
+          </div>
+          <article class="text">
+            <div class="header">
+              <h2 class="capitalize text-3xl font-bold">Story About Us</h2>
+              <span class="text-stone-400 font-merri"
+                >Venenatis Fusce Vulputate</span
+              >
+            </div>
+            <p class="text-stone-500">
+              Limos King offers superb lim service in New York and Manhatatan.
+              We are the most popular and has been chosen by many important
+              people. We also provide premier service to the airport, wedding,
+              casino, sport event, proms etc. Donec id elit non mi porta gravida
+              at eget metus. Cras justo odio, dapibus ac facilisis in, egestas
+              eget quam. Aenean lacinia bibendum nulla sed consectetur.
+              Curabitur blandit tempus porttitor. Donec id elit non mi porta
+              gravida at eget metus.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service -->
+    <div class="service_bottom py-10 text-gray-700">
+      <div class="container">
+        <div
+          class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
+        >
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-11.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">NIGHT PARTIES</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-21.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">WEDDINGS</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-31.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">CASINOS</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-41.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">BIRTHDAYS</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-51.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">PROMS</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+          <div class="item flex gap-5">
+            <div class="icon">
+              <img src="./images/service/service-icon-61.png" alt="icon" />
+            </div>
+            <div class="content grid gap-6">
+              <h3 class="uppercase text-xl font-bold">AIRPORT TRANSFERS</h3>
+              <p class="text-gray-500 text-sm">
+                Limos King offers superb lim service in New York and Manhatatan.
+                We are the most popular and has been chosen by many important
+                people. We also provide premier service to the airport, wedding,
+                casino, sport event, proms etc.
+              </p>
+
+              <a href="#" class="capitalize text-default-color font-merri"
+                >Read more</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Skill -->
+    <section class="about_skill_bg">
+      <div class="container">
+        <div
+          class="content py-6 grid grid-cols-1 sm:grid-cols-2 md:flex justify-between items-center gap-4"
+        >
+          <div
+            class="item flex flex-col justify-center items-center gap-2 md:gap-6"
+          >
+            <div class="number">
+              <span class="text-3xl md:text-5xl">9000</span>
+            </div>
+            <div class="h-[2px] w-12 bg-slate-50 rounded-md"></div>
+            <span class="uppercase">happy customers</span>
+          </div>
+          <div
+            class="item flex flex-col justify-center items-center gap-2 md:gap-6"
+          >
+            <div class="number">
+              <span class="text-3xl md:text-5xl">12</span>
+            </div>
+            <div class="h-[2px] w-12 bg-slate-50 rounded-md"></div>
+            <span class="uppercase">luxury limos</span>
+          </div>
+          <div
+            class="item flex flex-col justify-center items-center gap-2 md:gap-6"
+          >
+            <div class="number">
+              <span class="text-3xl md:text-5xl">900000</span>
+            </div>
+            <div class="h-[2px] w-12 bg-slate-50 rounded-md"></div>
+            <span class="uppercase">miles</span>
+          </div>
+          <div
+            class="item flex flex-col justify-center items-center gap-2 md:gap-6"
+          >
+            <div class="number">
+              <span class="text-3xl md:text-5xl">30</span>
+            </div>
+            <div class="h-[2px] w-12 bg-slate-50 rounded-md"></div>
+            <span class="uppercase">qualified chauffuers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Progress -->
+    <section>
+      <div class="container">
+        <div
+          class="content text-stone-700 grid md:grid-cols-2 justify-between items-center gap-8"
+        >
+          <div class="progress_bar flex flex-col gap-4">
+            <!-- item -->
+            <div class="item_1 grid gap-4">
+              <div
+                class="text flex justify-between text-stone-600 text-sm font-semibold uppercase"
+              >
+                <span>new car</span>
+                <span>90%</span>
+              </div>
+              <!-- progress bar-->
+              <div
+                class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
+              >
+                <div
+                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                ></div>
+              </div>
+            </div>
+            <!-- item -->
+            <div class="item_2 grid gap-4">
+              <div
+                class="text flex justify-between text-stone-600 text-sm font-semibold uppercase"
+              >
+                <span>IN-HOUSE CHAUFFUERS</span>
+                <span>100%</span>
+              </div>
+              <!-- progress bar-->
+              <div
+                class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
+              >
+                <div
+                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                ></div>
+              </div>
+            </div>
+            <!-- item -->
+            <div class="item_3 grid gap-4">
+              <div
+                class="text flex justify-between text-stone-600 text-sm font-semibold uppercase"
+              >
+                <span>SATISFACTION RATE</span>
+                <span>95%</span>
+              </div>
+              <!-- progress bar-->
+              <div
+                class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
+              >
+                <div
+                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                ></div>
+              </div>
+            </div>
+            <!-- item -->
+            <div class="item_4 grid gap-4">
+              <div
+                class="text flex justify-between text-stone-600 text-sm font-semibold uppercase"
+              >
+                <span>WILLING TO COME BACK</span>
+                <span>100%</span>
+              </div>
+              <!-- progress bar-->
+              <div
+                class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
+              >
+                <div
+                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <article class="flex flex-col gap-4">
+            <h2 class="capitalize text-3xl font-bold">
+              Ullamcorper Parturient
+            </h2>
+            <p class="text-stone-500">
+              Limos King offers superb lim service in New York and Manhatatan.
+              We are the most popular and has been chosen by many important
+              people. We also provide premier service to the airport, wedding,
+              casino, sport event, proms etc. Donec id elit non mi porta gravida
+              at eget metus. Cras justo odio, dapibus ac facilisis in, egestas
+              eget quam. Aenean lacinia bibendum nulla sed consectetur.
+              Curabitur blandit tempus porttitor. Donec id elit non mi porta
+              gravida at eget metus. Duis mollis, est non commodo luctus, nisi
+              erat porttitor ligula, eget lacinia odio.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- About -->
+    <section class="py-0">
+      <div class="about bg-default-color pt-6 md:pt-0">
+        <div class="container">
+          <div
+            class="content flex flex-col md:flex-row items-center justify-between gap-4"
+          >
+            <h3 class="uppercase font-bold text-2xl text-center">
+              what about pricing?
+            </h3>
+            <span class="text-sm text-center"
+              >Don’t worry. We provide very nice deals and the most competative
+              price just for you!</span
+            >
+            <a href="#" class="bg-[#259FBD] py-5 md:py-10 px-4">
+              <button class="font-merri capitalize">check rate</button>
+              <i class="ml-2 fa-solid fa-arrow-right-long"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bottom section -->
+    <section class="bg-default-black text-zinc-600">
+      <div class="container">
+        <div
+          class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 text-zinc-300 font-monster"
+        >
+          <!-- About -->
+          <div class="about">
+            <h3 class="uppercase text-sm font-semibold">about us</h3>
+            <div class="flex flex-col gap-4">
+              <p class="text-[0.9rem] mt-7">
+                Cum sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Morbi leo risus, porta
+              </p>
+              <div class="logo">
+                <a href="#">
+                  <img class="w-40" src="./images/bottom/logo.png" alt="logo" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact info -->
+          <div class="contact-info">
+            <h3 class="uppercase text-sm font-semibold">contact info</h3>
+            <div class="info text-sm mt-7 flex flex-col gap-4">
+              <div class="address">
+                <span>Address: 184 Main Collins Street West Victoria 8007</span>
+              </div>
+              <ul class="grid gap-2">
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-phone"></i>
+                    <span>+1800-222-3333</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa fa-mobile"></i>
+                    <span>(1)-212-333-4343</span></a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="flex gap-3 justify-start items-center"
+                    ><i class="w-4 h-4 fa-regular fa-envelope"></i>
+                    <span>book@limokingtheme.com</span></a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Recent post -->
+          <div class="recent_post text-sm">
+            <h3 class="uppercase text-sm font-semibold">recent post</h3>
+            <ul class="grid gap-3 mt-7 max-w-[240px]">
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Sem Porta Mollis Parturi</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nullam Lorem Mattis Purus</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Nibh Sem Sit Ullamcorper</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex gap-4 capitalize items-center border-b-[1px] border-zinc-500 border-opacity-40 transition-all opacity-70 hover:opacity-100 pb-1"
+                >
+                  <i class="pb-2 fa-solid fa-arrow-right"></i>
+                  <span class="pb-2 capitalize">Donec luctus imperdiet</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- Works -->
+          <div class="recent-works">
+            <h3 class="uppercase text-sm font-semibold">recent works</h3>
+
+            <div class="mt-7 grid_img grid grid-cols-3 gap-3 xs:max-w-[14rem]">
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1058269641-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1427849831-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_1837970511-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_2580348261-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_716302901-150x150.jpg"
+                  alt=""
+                />
+              </a>
+              <a href="#">
+                <img
+                  class="w-full"
+                  src="./images/bottom/shutterstock_770756561-150x150.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-zinc-900 py-4 text-sm">
+      <div class="container">
+        <div class="content flex justify-between flex-wrap gap-4">
+          <div class="copyright">
+            <h5 class="capitalize text-zinc-500">
+              Copyright 2022, All Right Reserved
+            </h5>
+          </div>
+          <div class="link_icons">
+            <ul class="flex gap-4 text-md">
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-dribbble"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-pinterest"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-google-plus-g"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition-all text-zinc-400 hover:text-zinc-100"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- overlay -->
+    <div
+      class="overlay absolute inset-0 -z-10 transition-all duration-500"
+    ></div>
+    <script src="./js/vendor/jquery.min.js"></script>
+    <script src="./js/vendor/jquery.lineProgressbar.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
+
+<!--==================================================-->
+<!-----Start Portfolio Section ----->
+<!--===================================================-->
