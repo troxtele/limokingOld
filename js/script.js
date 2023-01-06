@@ -1,6 +1,7 @@
 $(document).ready(function () {
-  $(".nav_links li a").click(function () {
-    $(".nav_links li a").removeClass("active_link");
+  $(".nav_large li a").click(function () {
+    console.log(this)
+    $(".nav_large li a").removeClass("active_link");
     $(this).addClass("active_link");
   });
 
@@ -11,12 +12,12 @@ $(document).ready(function () {
 
   // Nav button
   const toggleNav = () => {
-    $(".nav_links_small").toggleClass("left_0");
+    $(".nav_small").toggleClass("left_0");
     $(".overlay").toggleClass("bg-black/70 z-30");
   };
   $(".nav_btn").click(toggleNav);
   $(".overlay").click(toggleNav);
-  $(".nav_links_small li").click(toggleNav);
+  $(".nav_small li").click(toggleNav);
 });
 
 // Sliders
@@ -95,7 +96,7 @@ $(document).ready(function () {
   });
 
   // Main Slider
-  let swiper = new Swiper(".home-slider", {
+  let swiper = new Swiper(".main_slider", {
     speed: 1000,
     pagination: {
       el: ".swiper-pagination",
@@ -107,6 +108,31 @@ $(document).ready(function () {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+  });
+  // Car Slider
+  let carSlider = new Swiper(".car_slider", {
+    speed: 1000,
+    pagination: {
+      el: ".car_pagination",
+      dynamicBullets: true,
+      clickable: true,
+    },
+    loop: true,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".car_next",
+      prevEl: ".car_prev",
+    },
+  });
+  // testimonial Slider
+  let testimonial = new Swiper(".testi_slider", {
+    speed: 500,
+    loop: true,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".testi_next",
+      prevEl: ".testi_prev",
     },
   });
 });

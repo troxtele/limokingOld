@@ -94,44 +94,56 @@
       </div>
     </header>
     <!-- Navbar -->
-    <nav>
+    <nav class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl">
       <!-- Large Screen -->
       <div
-        class="nav_large hidden md:block sticky top-0 transition-all duration-500 bg-zinc-900/80 z-50 backdrop-blur-xl"
+        class="nav_large hidden md:block transition-all duration-500 "
       >
         <div class="container flex justify-end">
           <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
               <ul class="nav_links flex justify-center items-center gap-5">
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
-                >
-                  <a href="#">home</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                    >home</a
+                  >
                 </li>
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                >
-                  <a href="#">page</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >page</a
+                  >
                 </li>
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                >
-                  <a href="#">our fleet</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >our fleet</a
+                  >
                 </li>
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                >
-                  <a href="#">service rate</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >service rate</a
+                  >
                 </li>
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                >
-                  <a href="#">portfolio</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >portfolio</a
+                  >
                 </li>
-                <li
-                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                >
-                  <a href="#">blog</a>
+                <li class="flex justify-center items-center">
+                  <a
+                    href="#"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    >blog</a
+                  >
                 </li>
               </ul>
             </div>
@@ -160,7 +172,7 @@
 
       <!-- Small Screen -->
       <div
-        class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 z-50"
+        class="md:hidden bg-default-black backdrop-blur-3xl"
       >
         <div class="container">
           <div class="flex justify-between items-center py-3 sm:py-5">
@@ -178,7 +190,7 @@
               </div>
               <!-- Nav links -->
               <ul
-                class="nav_links_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+                class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
               >
                 <li><a href="#">home</a></li>
                 <li>

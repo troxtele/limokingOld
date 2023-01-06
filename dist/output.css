@@ -664,6 +664,14 @@ video {
   margin-bottom: 2.25rem;
 }
 
+.ml-24 {
+  margin-left: 6rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
 .block {
   display: block;
 }
@@ -760,6 +768,10 @@ video {
   min-height: 70vh;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-full {
   width: 100%;
 }
@@ -804,6 +816,10 @@ video {
   width: 1rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .max-w-\[12rem\] {
   max-width: 12rem;
 }
@@ -822,6 +838,10 @@ video {
 
 .max-w-\[240px\] {
   max-width: 240px;
+}
+
+.max-w-\[50\%\] {
+  max-width: 50%;
 }
 
 .-translate-x-1\/2 {
@@ -1265,6 +1285,11 @@ video {
 
 .text-\[0\.9rem\] {
   font-size: 0.9rem;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .font-medium {
@@ -1872,6 +1897,14 @@ main:hover .swiper-pagination {
     max-width: none;
   }
 
+  .sm\:max-w-\[30\%\] {
+    max-width: 30%;
+  }
+
+  .sm\:max-w-\[230px\] {
+    max-width: 230px;
+  }
+
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1935,6 +1968,10 @@ main:hover .swiper-pagination {
 }
 
 @media (min-width: 768px) {
+  .md\:sticky {
+    position: sticky;
+  }
+
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -2039,6 +2076,10 @@ main:hover .swiper-pagination {
     justify-self: end;
   }
 
+  .md\:bg-zinc-900\/80 {
+    background-color: rgb(24 24 27 / 0.8);
+  }
+
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -2100,5 +2141,11 @@ main:hover .swiper-pagination {
 
   .md\:opacity-0 {
     opacity: 0;
+  }
+
+  .md\:backdrop-blur-xl {
+    --tw-backdrop-blur: blur(24px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+            backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
   }
 }
