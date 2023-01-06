@@ -94,129 +94,136 @@
       </div>
     </header>
     <!-- Navbar -->
-    <!-- Large Screen -->
-    <nav
-      class="hidden md:block sticky top-0 transition-all duration-500 bg-zinc-900/80 z-50 backdrop-blur-xl"
-    >
-      <div class="container flex justify-end">
-        <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
-          <div class="nav uppercase font-medium text-sm">
-            <ul class="nav_links flex justify-center items-center gap-5">
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+    <nav>
+      <!-- Large Screen -->
+      <div
+        class="nav_large hidden md:block sticky top-0 transition-all duration-500 bg-zinc-900/80 z-50 backdrop-blur-xl"
+      >
+        <div class="container flex justify-end">
+          <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
+            <div class="nav uppercase font-medium text-sm">
+              <ul class="nav_links flex justify-center items-center gap-5">
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                >
+                  <a href="#">home</a>
+                </li>
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                >
+                  <a href="#">page</a>
+                </li>
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                >
+                  <a href="#">our fleet</a>
+                </li>
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                >
+                  <a href="#">service rate</a>
+                </li>
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                >
+                  <a href="#">portfolio</a>
+                </li>
+                <li
+                  class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                >
+                  <a href="#">blog</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Search Button -->
+            <div class="search relative z-50">
+              <button class="search_button">
+                <img
+                  class="max-w-[1.3rem]"
+                  src="./images/header/magnifier-light.png"
+                  alt=""
+                />
+              </button>
+              <div
+                class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
               >
-                <a href="#">home</a>
-              </li>
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-              >
-                <a href="#">page</a>
-              </li>
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-              >
-                <a href="#">our fleet</a>
-              </li>
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-              >
-                <a href="#">service rate</a>
-              </li>
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-              >
-                <a href="#">portfolio</a>
-              </li>
-              <li
-                class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-              >
-                <a href="#">blog</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Search Button -->
-          <div class="search relative z-50">
-            <button class="search_button">
-              <img
-                class="max-w-[1.3rem]"
-                src="./images/header/magnifier-light.png"
-                alt=""
-              />
-            </button>
-            <div
-              class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
-            >
-              <input
-                type="text"
-                class="input w-full h-full border-none focus:outline-none bg-transparent placeholder:select-none placeholder:text-slate-200"
-                placeholder="Type keywords"
-              />
+                <input
+                  type="text"
+                  class="input w-full h-full border-none focus:outline-none bg-transparent placeholder:select-none placeholder:text-slate-200"
+                  placeholder="Type keywords"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </nav>
-    <!-- Small Screen -->
-    <nav class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 z-50">
-      <div class="container">
-        <div class="flex justify-between items-center py-3 sm:py-5">
-          <div class="nav_logo">
-            <img class="w-28" src="./images/header/logo.png" alt="logo" />
-          </div>
-          <div class="nav">
-            <!-- Nav btn -->
-            <div
-              class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
-            >
-              <span class="line w-8 h-[3px] bg-slate-200"></span>
-              <span class="line h-[3px] bg-slate-200"></span>
-              <span class="line h-[3px] bg-slate-200"></span>
+
+      <!-- Small Screen -->
+      <div
+        class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 z-50"
+      >
+        <div class="container">
+          <div class="flex justify-between items-center py-3 sm:py-5">
+            <div class="nav_logo">
+              <img class="w-28" src="./images/header/logo.png" alt="logo" />
             </div>
-            <!-- Nav links -->
-            <ul
-              class="nav_links_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
-            >
-              <li><a href="#">home</a></li>
-              <li>
-                <a
-                  href="#"
-                  class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                  ><span>page</span><i class="fa-solid fa-arrow-right"></i>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>our fleet</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
-              </li>
-              <li><a href="#">service rate</a></li>
-              <li>
-                <a
-                  href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>portfolio</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
-              </li>
-            </ul>
+            <div class="nav">
+              <!-- Nav btn -->
+              <div
+                class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+              >
+                <span class="line w-8 h-[3px] bg-slate-200"></span>
+                <span class="line h-[3px] bg-slate-200"></span>
+                <span class="line h-[3px] bg-slate-200"></span>
+              </div>
+              <!-- Nav links -->
+              <ul
+                class="nav_links_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+              >
+                <li><a href="#">home</a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center border-b border-stone-900/50"
+                    ><span>page</span><i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>our fleet</span>
+                    <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+                <li><a href="#">service rate</a></li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>portfolio</span>
+                    <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-bottom flex justify-between items-center"
+                    ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </nav>
 
     <main class="z-20">
-      <div class="swiper main_slider md:-mt-[61px] text-slate-50">
+      <div class="swiper main_slider md:-mt-[61px] max-h-[755px] text-slate-50">
         <div class="swiper-wrapper">
           <div
-            class="swiper-slide slide one min-h-[80vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-center"
+            class="swiper-slide slide one min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-center"
           >
             <div class="content text-center grid gap-4">
               <h2
@@ -251,7 +258,7 @@
           </div>
 
           <div
-            class="swiper-slide slide two min-h-screen bg-cover bg-center flex items-center md:items-end"
+            class="swiper-slide slide two min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex items-center md:items-end"
           >
             <div
               class="content grid gap-1 md:gap-4 md:ml-24 md:mb-32 px-14 md:px-0"
@@ -277,10 +284,10 @@
           </div>
 
           <div
-            class="swiper-slide slide three min-h-screen bg-cover bg-center flex justify-center items-center mb:items-end"
+            class="swiper-slide slide three min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-end pb-28 mb:items-end"
           >
             <div
-              class="conten mb-10 sm:mb-24 mb:mb-32 flex flex-col gap-4 justify-center items-center text-2xl xs:text-4xl sm:text-5xl md:text-7xl capitalize font-semibold"
+              class="conten flex flex-col gap-4 md:justify-end items-center text-2xl xs:text-4xl sm:text-5xl md:text-7xl capitalize font-semibold"
             >
               <h1 class="">give yourself</h1>
               <span class="w-6 sm:w-10 h-1 rounded-md bg-slate-50"></span>
@@ -288,7 +295,10 @@
             </div>
           </div>
         </div>
-        <div class="swiper-pagination transition-all duration-300 md:opacity-0"></div>
+
+        <div
+          class="swiper-pagination transition-all duration-300 md:opacity-0"
+        ></div>
         <div
           class="swiper-button-next next transition-all duration-300 md:opacity-0"
         ></div>
