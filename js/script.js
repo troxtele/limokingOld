@@ -1,139 +1,114 @@
-$(document).ready(function () {
-  $(".nav_large li a").click(function () {
-    console.log(this)
-    $(".nav_large li a").removeClass("active_link");
-    $(this).addClass("active_link");
-  });
-
-  // Search button
-  $(".search_button").click(function () {
-    $(".search_input").toggleClass("h_16")
-  })
-
-  // Nav button
-  const toggleNav = () => {
-    $(".nav_small").toggleClass("left_0");
-    $(".overlay").toggleClass("bg-black/70 z-30");
-  };
-  $(".nav_btn").click(toggleNav);
-  $(".overlay").click(toggleNav);
-  $(".nav_small li").click(toggleNav);
+// <--------------------SLIDERS-------------------->
+// Main Slider
+let swiper = new Swiper(".main_slider", {
+  speed: 1000,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+    clickable: true,
+  },
+  loop: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
-// Sliders
-$(document).ready(function () {
-  let owl = $(".car_slider");
-  owl.owlCarousel({
-    center: true,
-    loop: true,
-    margin: 10,
-    nav: false,
-    navigation: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    rewind: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 2,
-      },
-      1000: {
-        items: 3,
-      },
+// testimonial Slider
+let testimonial = new Swiper(".testi_slider", {
+  speed: 500,
+  loop: true,
+  navigation: {
+    nextEl: ".testi_next",
+    prevEl: ".testi_prev",
+  },
+});
+// Car Slider
+let carSlider = new Swiper(".car_slider", {
+  speed: 500,
+  autoplay: true,
+  loop: true,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".car_next",
+    prevEl: ".car_prev",
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10,
     },
-  });
-
-  // Custom Button
-  $(".next_btn").click(function () {
-    owl.trigger("next.owl.carousel");
-  });
-  $(".prev_btn").click(function () {
-    owl.trigger("prev.owl.carousel");
-  });
-
-  $(".brand_slider").slick({
-    dots: false,
-    arrows: false,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    variableWidth: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 350,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  });
-
-  // Main Slider
-  let swiper = new Swiper(".main_slider", {
-    speed: 1000,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-      clickable: true,
+    700: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     },
-    loop: true,
-    centeredSlides: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+    1000: {
+      slidesPerView: 3,
+      spaceBetween: 30,
     },
-  });
-  // Car Slider
-  let carSlider = new Swiper(".car_slider", {
-    speed: 1000,
-    pagination: {
-      el: ".car_pagination",
-      dynamicBullets: true,
-      clickable: true,
+  },
+});
+// Brand Slider
+let brandSlider = new Swiper(".brand_slider", {
+  speed: 500,
+  loop: true,
+  slidesPerView: 2,
+  autoplay: true,
+  breakpoints: {
+    500: {
+      slidesPerView: 3,
+      spaceBetween: 10,
     },
-    loop: true,
-    centeredSlides: true,
-    navigation: {
-      nextEl: ".car_next",
-      prevEl: ".car_prev",
+    700: {
+      slidesPerView: 4,
+      spaceBetween: 20,
     },
-  });
-  // testimonial Slider
-  let testimonial = new Swiper(".testi_slider", {
-    speed: 500,
-    loop: true,
-    centeredSlides: true,
-    navigation: {
-      nextEl: ".testi_next",
-      prevEl: ".testi_prev",
+    1000: {
+      slidesPerView: 5,
+      spaceBetween: 30,
     },
-  });
+  },
 });
 
+// <---------------------------- Replaced with Alpine js ---------------------------- >
+
+// const smallNav = document.querySelector(".nav_small");
+// const overlay = document.querySelector(".overlay");
+// const navBtn = document.querySelector(".nav_btn");
+// const navLi = document.querySelector(".nav_small li");
+
+// const toggleNav = () => {
+//   smallNav.classList.toggle("left_0");
+//   overlay.classList.toggle("");
+//   overlay.classList.toggle("");
+//   console.log(overlay);
+// };
+
+// navBtn.onclick = () => {
+//   toggleNav();
+// };
+// overlay.onclick = () => {
+//   toggleNav();
+// };
+// navLi.onclick = () => {
+//   toggleNav();
+// };
+
+// Active nav link
+// const navLarge = [...document.querySelectorAll(".nav_large li a")];
+// navLarge.map((link) => {
+//   link.onclick = () => {
+//     navLarge.map((link) => {
+//       link.classList.remove("active_link");
+//     });
+//     link.classList.add("active_link")
+//   }
+// })
+
+// Search Button
+// const searchBtn = document.querySelector(".search_button");
+// const searchInput = document.querySelector(".search_input");
+// searchBtn.onclick = () => {
+//   searchInput.classList.toggle("h_16");
+// }

@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LimoKing</title>
     <!-- Fonts -->
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Montserrat Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Merriweather Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
       rel="stylesheet"
@@ -23,11 +24,6 @@
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
-    <!-- Raleway font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -36,11 +32,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Alpine js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
   </head>
 
-  <body class="text-slate-50 font-hind relative">
+  <!-- Title -->
+  <title>LimoKing</title>
+  <body x-data="{ navOpen: false }" class="text-slate-50 font-hind relative">
+    <!----------------------------------------->
+    <!----- Header Section ----->
+    <!----------------------------------------->
     <header class="z-40 relative">
       <!-- Header Top -->
       <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
@@ -50,7 +66,7 @@
           >
             <!-- Logo -->
             <div
-              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center"
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
               <a href="#">
                 <img
@@ -62,7 +78,7 @@
             </div>
             <!-- Contact Info -->
             <div
-              class="contact-info w-full flex flex-col sm:flex-row md:flex-col md:gap-2 justify-center gap-2 md:justify-between items-center md:items-end md:col-span-1"
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col justify-center gap-2 sm:gap-6 md:justify-between items-center md:items-end md:col-span-1"
             >
               <div class="number flex items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
@@ -79,16 +95,25 @@
         </div>
       </div>
     </header>
-    <!-- Navbar -->
-    <nav class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl">
+    <!----------------------------------------->
+    <!----- Nav Section ----->
+    <!----------------------------------------->
+    <nav
+      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+    >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
         <div class="container flex justify-end">
-          <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
+          <div class="flex gap-32 lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
-              <ul class="nav_links flex justify-center items-center gap-5">
+              <ul
+                x-data="{active: 'about'}"
+                class="nav_links flex justify-center items-center lg:gap-5"
+              >
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'home'"
+                    x-bind:class="active === 'home' ? 'active_link': '' "
                     href="index.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >home</a
@@ -96,13 +121,17 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
-                    href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                    x-on:click="active = 'about'"
+                    x-bind:class="active === 'about' ? 'active_link': '' "
+                    href="about.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >about us</a
                   >
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'ourFeet'"
+                    x-bind:class="active === 'ourFeet' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >our fleet</a
@@ -110,6 +139,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'serivce'"
+                    x-bind:class="active === 'service' ? 'active_link': '' "
                     href="rate.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >service rate</a
@@ -117,6 +148,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'portfolio'"
+                    x-bind:class="active === 'portfolio' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >portfolio</a
@@ -124,6 +157,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'blog'"
+                    x-bind:class="active === 'blog' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >blog</a
@@ -132,8 +167,8 @@
               </ul>
             </div>
             <!-- Search Button -->
-            <div class="search relative z-50">
-              <button class="search_button">
+            <div x-data="{ open: false }" class="search relative z-50">
+              <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
                   src="./images/header/magnifier-light.png"
@@ -141,6 +176,7 @@
                 />
               </button>
               <div
+                x-bind:class="open ? 'h_16':'' "
                 class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
               >
                 <input
@@ -154,7 +190,7 @@
         </div>
       </div>
 
-      <!-- Small Screen -->
+      <!-- Nav Small Screen -->
       <div class="md:hidden bg-default-black backdrop-blur-3xl">
         <div class="container">
           <div class="flex justify-between items-center py-3 sm:py-5">
@@ -164,6 +200,7 @@
             <div class="nav">
               <!-- Nav btn -->
               <div
+                @click="navOpen = !navOpen"
                 class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
               >
                 <span class="line w-8 h-[3px] bg-slate-200"></span>
@@ -172,19 +209,23 @@
               </div>
               <!-- Nav links -->
               <ul
+                x-bind:class="navOpen ? 'left_0' : '' "
                 class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
               >
                 <li><a href="index.html">home</a></li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="about.html"
                     class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                    ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
+                    ><span>about us</span
+                    ><i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="rate.html"
+                    @click="navOpen = false"
+                    href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>our fleet</span>
                     <i class="fa-solid fa-arrow-right"></i
@@ -193,6 +234,7 @@
                 <li><a href="rate.html">service rate</a></li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>portfolio</span>
@@ -201,6 +243,7 @@
                 </li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
@@ -212,10 +255,11 @@
         </div>
       </div>
     </nav>
-
-    <!-- Section-1 -->
+    <!----------------------------------------->
+    <!----- Main Section ----->
+    <!----------------------------------------->
     <main
-      class="cars about_main_bg h-[400px] text-slate-50 overflow-hidden -mt-[61px] flex items-end"
+      class="cars bg-about-main-bg bg-cover bg-center bg-no-repeat h-[400px] text-slate-50 overflow-hidden -mt-[61px] flex items-end"
     >
       <div class="container">
         <div class="cars_content flex flex-col items-center text-center">
@@ -233,8 +277,9 @@
         </div>
       </div>
     </main>
-
-    <!-- Story -->
+    <!----------------------------------------->
+    <!----- Story Section ----->
+    <!----------------------------------------->
     <section>
       <div class="container">
         <div
@@ -268,14 +313,20 @@
         </div>
       </div>
     </section>
-
-    <!-- Service -->
+    <!----------------------------------------->
+    <!----- Service Section ----->
+    <!----------------------------------------->
     <div class="service_bottom py-10 text-gray-700">
       <div class="container">
         <div
           class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
         >
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-11.png" alt="icon" />
             </div>
@@ -293,7 +344,12 @@
               >
             </div>
           </div>
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-21.png" alt="icon" />
             </div>
@@ -311,7 +367,12 @@
               >
             </div>
           </div>
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-31.png" alt="icon" />
             </div>
@@ -329,7 +390,12 @@
               >
             </div>
           </div>
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-41.png" alt="icon" />
             </div>
@@ -347,7 +413,12 @@
               >
             </div>
           </div>
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-51.png" alt="icon" />
             </div>
@@ -365,7 +436,12 @@
               >
             </div>
           </div>
-          <div class="item flex gap-5">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
+            class="item flex gap-5"
+          >
             <div class="icon">
               <img src="./images/service/service-icon-61.png" alt="icon" />
             </div>
@@ -386,8 +462,10 @@
         </div>
       </div>
     </div>
-    <!-- Skill -->
-    <section class="about_skill_bg">
+    <!----------------------------------------->
+    <!----- Skills Section ----->
+    <!----------------------------------------->
+    <section class="bg-about-skill-bg bg-cover bg-center bg-no-repeat">
       <div class="container">
         <div
           class="content py-6 grid grid-cols-1 sm:grid-cols-2 md:flex justify-between items-center gap-4"
@@ -431,7 +509,9 @@
         </div>
       </div>
     </section>
-    <!-- Progress -->
+    <!----------------------------------------->
+    <!----- Progress Bar Section ----->
+    <!----------------------------------------->
     <section>
       <div class="container">
         <div
@@ -451,7 +531,7 @@
                 class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
               >
                 <div
-                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                  class="progress-value 90 h-[7px] w-0 rounded-[100px] bg-default-color"
                 ></div>
               </div>
             </div>
@@ -468,7 +548,7 @@
                 class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
               >
                 <div
-                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                  class="progress-value 100 h-[7px] w-0 rounded-[100px] bg-default-color"
                 ></div>
               </div>
             </div>
@@ -485,7 +565,7 @@
                 class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
               >
                 <div
-                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                  class="progress-value 95 h-[7px] w-0 rounded-[100px] bg-default-color"
                 ></div>
               </div>
             </div>
@@ -502,7 +582,7 @@
                 class="progress bg-stone-200 justify-start rounded-full items-center relative flex h-[7px] w-full"
               >
                 <div
-                  class="progress-value h-[7px] w-0 rounded-[100px] bg-default-color"
+                  class="progress-value 100 h-[7px] w-0 rounded-[100px] bg-default-color"
                 ></div>
               </div>
             </div>
@@ -526,11 +606,16 @@
         </div>
       </div>
     </section>
-    <!-- About -->
+    <!----------------------------------------->
+    <!----- Pricing Section ----->
+    <!----------------------------------------->
     <section class="py-0">
       <div class="about bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1000"
             class="content flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <h3 class="uppercase font-bold text-2xl text-center">
@@ -548,7 +633,9 @@
         </div>
       </div>
     </section>
-    <!-- Bottom section -->
+    <!----------------------------------------->
+    <!----- About Section ----->
+    <!----------------------------------------->
     <section class="bg-default-black text-zinc-600">
       <div class="container">
         <div
@@ -693,7 +780,9 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
+    <!----------------------------------------->
+    <!----- Footer Section ----->
+    <!----------------------------------------->
     <footer class="bg-zinc-900 py-4 text-sm">
       <div class="container">
         <div class="content flex justify-between flex-wrap gap-4">
@@ -754,14 +843,16 @@
 
     <!-- overlay -->
     <div
-      class="overlay absolute inset-0 -z-10 transition-all duration-500"
+      @click="navOpen = false"
+      x-bind:class="navOpen ? 'bg-black/70 z-30' : '-z-10'"
+      class="overlay absolute inset-0 transition-all duration-500"
     ></div>
-    <script src="./js/vendor/jquery.min.js"></script>
-    <script src="./js/vendor/jquery.lineProgressbar.js"></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/aboutPage.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
-
-<!--==================================================-->
-<!-----Start Portfolio Section ----->
-<!--===================================================-->

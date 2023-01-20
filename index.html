@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LimoKing</title>
     <!-- Fonts -->
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Montserrat Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Merriweather Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
       rel="stylesheet"
@@ -23,11 +24,6 @@
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
-    <!-- Raleway font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -36,35 +32,38 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="./css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css" />
     <!-- Swiper Slider -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <!-- Slick Slider -->
-    <link rel="stylesheet" href="./css/slick.css" />
-    <link rel="stylesheet" href="./css/slick-theme.css" />
-
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Alpine js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
   </head>
 
-  <body class="text-slate-50 font-hind relative">
+  <!-- Title -->
+  <title>LimoKing</title>
+  <body x-data="{ navOpen: false }" class="text-slate-50 font-hind relative">
+    <!----------------------------------------->
+    <!----- Header Section ----->
+    <!----------------------------------------->
     <header class="z-40 relative">
-      <!-- Header Top -->
-      <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
+      <div class="header bg-default-black text-slate-50 py-2 md:py-8">
         <div class="container">
           <div
             class="content py-2 flex flex-col-reverse md:grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
           >
             <!-- Logo -->
             <div
-              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center"
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
               <a href="#">
                 <img
@@ -76,7 +75,7 @@
             </div>
             <!-- Contact Info -->
             <div
-              class="contact-info w-full flex flex-col sm:flex-row md:flex-col md:gap-2 justify-center gap-2 md:justify-between items-center md:items-end md:col-span-1"
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
             >
               <div class="number flex items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
@@ -93,63 +92,261 @@
         </div>
       </div>
     </header>
-    <!-- Navbar -->
-    <nav class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl">
+    <!----------------------------------------->
+    <!----- Nav Large Screen ----->
+    <!----------------------------------------->
+    <nav
+      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+    >
       <!-- Large Screen -->
-      <div
-        class="nav_large hidden md:block transition-all duration-500 "
-      >
+      <div class="nav_large hidden md:block transition-all duration-500">
         <div class="container flex justify-end">
-          <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
+          <div class="flex gap-32 lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
-              <ul class="nav_links flex justify-center items-center gap-5">
-                <li class="flex justify-center items-center">
+              <ul
+                x-data="{active: 'home'}"
+                class="nav_links flex justify-center items-center lg:gap-5"
+              >
+                <li class="">
                   <a
+                    x-on:click="active = 'home'"
+                    x-bind:class="active === 'home' ? 'active_link': '' "
                     href="index.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >home</a
                   >
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- About Us -->
+                <li class="relative">
                   <a
+                    x-on:click="active = 'about'"
+                    x-bind:class="active === 'about' ? 'active_link': '' "
                     href="about.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                    >about us</a
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    >pages</a
                   >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-900/90 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >About us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >About us 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >service</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >personal</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
+                        >faq</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >contact page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >gallery</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >404 page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-slate-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >testimonial</a
+                      >
+                    </li>
+                  </ul>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Our fleet -->
+                <li class="relative">
                   <a
+                    x-on:click="active = 'ourFeet'"
+                    x-bind:class="active === 'ourFeet' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >our fleet</a
                   >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-900/90 z-50  capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >Fleet 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >Fleet 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >Fleet 4 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        >Fleet Modern 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
+                        >Fleet Modern 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >Fleet Modern 4 Columns</a
+                      >
+                    </li>
+                  </ul>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Service rate -->
+                <li>
                   <a
+                    x-on:click="active = 'serivce'"
+                    x-bind:class="active === 'service' ? 'active_link': '' "
                     href="rate.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >service rate</a
                   >
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Portfolio -->
+                <li class="relative">
                   <a
+                    x-on:click="active = 'portfolio'"
+                    x-bind:class="active === 'portfolio' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >portfolio</a
                   >
+                  <!-- Sub menu -->
+                  <div class="submenu capitalize p-6 absolute top-full -right-[205%] lg:-right-[310%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500">
+
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                        <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3">Portfolio Classic</a>
+                        <ul class=" w-72 lg:w-96 text-zinc-300">
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 1 Column (Both Sidebar)</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 2 Columns (Right Sidebar)</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 3 Columns</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 4 Columns</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 2 Columns, No Space</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 3 Columns, No Space</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 4 Columns, No Space</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Single</a></li>
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                        <div class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30">
+                        <a href="#" class="text-zinc-100 text-lg px-3">Portfolio With Filter</a>
+                        <ul class=" w-72 lg:w-96 text-zinc-300">
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 1 Col With Filter</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 2 Cols With Filter</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 3 Cols With Filter</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Grid 4 Cols With Filter</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Modern 3 Cols With Filter</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Portfolio Modern 4 Cols With Filter</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Blog -->
+                <li class="relative">
                   <a
+                    x-on:click="active = 'blog'"
+                    x-bind:class="active === 'blog' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >blog</a
                   >
+                  <!-- Sub menu -->
+                  <div class="submenu capitalize p-6 absolute top-full -right-[200%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500">
+
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                        <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3">Blog Column</a>
+                        <ul class=" w-72 lg:w-96 text-zinc-300">
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 1 Column (Right Sidebar)</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 2 Columns (Right Sidebar)</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 3 Columns</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 4 Columns</a></li>
+
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                        <div class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30">
+                        <a href="#" class="text-zinc-100 text-lg px-3">Blog Masonry</a>
+                        <ul class=" w-72 lg:w-96 text-zinc-300">
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 2 Columns – Masonry (Right Sidebar)</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 3 Columns – Masonry</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog 4 Columns – Masonry</a></li>
+                          <li><a href="#" class="flex w-full pb-[0.3rem]  pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm">Blog Full</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
             <!-- Search Button -->
-            <div class="search relative z-50">
-              <button class="search_button">
+            <div x-data="{ open: false }" class="search relative z-50">
+              <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
                   src="./images/header/magnifier-light.png"
@@ -157,6 +354,7 @@
                 />
               </button>
               <div
+                x-bind:class="open ? 'h_16':'' "
                 class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
               >
                 <input
@@ -169,91 +367,101 @@
           </div>
         </div>
       </div>
-
-      <!-- Small Screen -->
-      <div
-        class="md:hidden bg-default-black backdrop-blur-3xl"
-      >
-        <div class="container">
-          <div class="flex justify-between items-center py-3 sm:py-5">
-            <div class="nav_logo">
-              <img class="w-28" src="./images/header/logo.png" alt="logo" />
+    </nav>
+    <!----------------------------------------->
+    <!----- Nav Small Screen ----->
+    <!----------------------------------------->
+    <nav
+      class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center py-3 sm:py-5">
+          <div class="nav_logo">
+            <img class="w-28" src="./images/header/logo.png" alt="logo" />
+          </div>
+          <div class="nav">
+            <!-- Nav btn -->
+            <div
+              @click="navOpen = !navOpen"
+              class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+            >
+              <span class="line w-8 h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
             </div>
-            <div class="nav">
-              <!-- Nav btn -->
-              <div
-                class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
-              >
-                <span class="line w-8 h-[3px] bg-slate-200"></span>
-                <span class="line h-[3px] bg-slate-200"></span>
-                <span class="line h-[3px] bg-slate-200"></span>
-              </div>
-              <!-- Nav links -->
-              <ul
-                class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
-              >
-                <li><a href="index.html">home</a></li>
-                <li>
-                  <a
-                    href="about.html"
-                    class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                    ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>our fleet</span>
-                    <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-                <li><a href="rate.html">service rate</a></li>
-                <li>
-                  <a
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>portfolio</span>
-                    <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
+            <!-- Nav links -->
+            <ul
+              x-bind:class="navOpen ? 'left_0' : '' "
+              class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+            >
+              <li><a href="index.html">home</a></li>
+              <li>
+                <a
+                  @click="navOpen = false"
+                  href="about.html"
+                  class="border-bottom flex justify-between items-center border-b border-stone-900/50"
+                  ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  @click="navOpen = false"
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>our fleet</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </li>
+              <li><a href="rate.html">service rate</a></li>
+              <li>
+                <a
+                  @click="navOpen = false"
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>portfolio</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  @click="navOpen = false"
+                  href="#"
+                  class="border-bottom flex justify-between items-center"
+                  ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </nav>
-
+    <!----------------------------------------->
+    <!----- Main Section ----->
+    <!----------------------------------------->
     <main class="z-20">
-      <div class="swiper main_slider md:-mt-[61px] max-h-[755px] text-slate-50">
+      <div class="swiper main_slider md:-mt-[61px] text-slate-50">
         <div class="swiper-wrapper">
+          <!-- Slide 1 -->
           <div
-            class="swiper-slide slide one min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-center"
+            class="swiper-slide bg-one-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-center relative"
           >
-            <div class="content text-center grid gap-4">
+            <div class="content slide_1 text-center flex flex-col gap-6 absolute top-1/2 transform -translate-y-1/2">
               <h2
-                class="capitalize font-raleway text-2xl xs:text-4xl sm:text-5xl md:text-6xl text-cyan-400 font-semibold"
+                class="first capitalize text-2xl xs:text-4xl sm:text-5xl md:text-6xl text-cyan-400 font-semibold font-merri"
               >
                 the best limos
               </h2>
               <h3
-                class="capitalize text-cyan-200 text-2xl xs:text-3xl sm:text-4xl md:text-5xl"
+                class="second capitalize text-cyan-200 text-2xl xs:text-3xl sm:text-4xl md:text-5xl"
               >
                 in new york
               </h3>
               <h1
-                class="uppercase font-bold text-3xl xs:text-5xl sm:text-7xl md:text-9xl"
+                class="third uppercase font-bold text-3xl xs:text-5xl sm:text-7xl md:text-9xl"
               >
                 Limo king
               </h1>
-              <div class="learn_more flex gap-6 justify-center items-center">
+              <div
+                class="fourth learn_more flex gap-6 justify-center items-center"
+              >
                 <div class="grid gap-1">
                   <div class="h-[2px] w-10 md:w-16 bg-slate-50"></div>
                   <div class="h-[1px] w-10 md:w-16 bg-slate-50"></div>
@@ -269,23 +477,27 @@
             </div>
           </div>
 
+          <!-- Slide 2 -->
+
           <div
-            class="swiper-slide slide two min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex items-center md:items-end"
+            class="swiper-slide relative bg-two-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center"
           >
             <div
-              class="content grid gap-1 md:gap-4 md:ml-24 md:mb-32 px-14 md:px-0"
+              class="content grid gap-2 slide_2 absolute top-1/2 left-[25%] transform -translate-x-[25%] -translate-y-1/2"
             >
-              <h1 class="text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold">
+              <h1
+                class="first text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold"
+              >
                 We Are #1 Limo Services
               </h1>
-              <div class="text-slate-200 text-sm md:text-md">
+              <p class="second text-slate-200 text-sm md:text-md">
                 Limos King offers superb limo service in New York and
                 Manhatatan. &nbsp;We are the most popular and has <br />been
                 chosen by many important people. We also provide premier service
                 to the airport, wedding, <br />casino, sport event, proms etc.
-              </div>
+              </p>
 
-              <div class="btn capitalize font-merri mt-6">
+              <div class="third btn capitalize font-merri mt-6">
                 <a
                   href="#"
                   class="bg-default-color text-sm md:text-md py-2 px-3 sm:py-3 sm:px-5 rounded-md"
@@ -295,15 +507,19 @@
             </div>
           </div>
 
+          <!-- Slide 3 -->
+
           <div
-            class="swiper-slide slide three min-h-[70vh] md:min-h-screen w-full bg-cover bg-center flex justify-center items-end pb-28 mb:items-end"
+            class="swiper-slide bg-three-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center relative"
           >
             <div
-              class="conten flex flex-col gap-4 md:justify-end items-center text-2xl xs:text-4xl sm:text-5xl md:text-7xl capitalize font-semibold"
+              class="content slide_3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4 items-center text-4xl sm:text-5xl md:text-7xl capitalize font-semibold w-full"
             >
-              <h1 class="">give yourself</h1>
-              <span class="w-6 sm:w-10 h-1 rounded-md bg-slate-50"></span>
-              <h1 class="text-default-color">A new experience</h1>
+              <h1 class="first">give yourself</h1>
+              <span
+                class="second w-6 sm:w-10 h-1 rounded-md bg-slate-50"
+              ></span>
+              <h1 class="third text-default-color">A new experience</h1>
             </div>
           </div>
         </div>
@@ -320,8 +536,12 @@
       </div>
     </main>
 
-    <!-- Section-1 -->
-    <section class="cars cars_bg h-[600px] text-slate-50 overflow-hidden">
+    <!----------------------------------------->
+    <!----- Cars Section ----->
+    <!----------------------------------------->
+    <section
+      class="cars bg-car-bg bg-no-repeat bg-cover bg-center h-[600px] text-slate-50 overflow-hidden"
+    >
       <div class="container">
         <div class="cars_content flex flex-col items-center text-center">
           <div class="header">
@@ -340,21 +560,22 @@
         </div>
       </div>
     </section>
-    <!-- Section 2 -->
+    <!----------------------------------------->
+    <!----- Car Slider Section ----->
+    <!----------------------------------------->
     <section>
       <div class="container">
         <div class="cars_slider_content flex flex-col items-center">
           <div class="header">
-            <h2 class="uppercase text-3xl text-slate-900 font-bold">
+            <h2 class="uppercase text-3xl text-stone-800 font-semibold">
               Our Fleet
             </h2>
           </div>
-
           <div
             class="slider_btn mt-10 text-slate-900 flex items-center gap-20 sm:gap-24 md:gap-28"
           >
             <button
-              class="prev_btn angel_left text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
+              class="car_prev angel_left text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
             >
               <i class="fa-solid fa-angle-left"></i>
             </button>
@@ -365,273 +586,276 @@
               <i class="fa fa-car"></i>
             </div>
             <button
-              class="next_btn angel_right text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
+              class="car_next angel_right text-xl flex justify-center items-center w-8 h-8 rounded-full border border-slate-600"
             >
               <i class="fa-solid fa-angle-right"></i>
             </button>
           </div>
 
           <div
-            class="car_slider text-default-black owl-carousel owl-theme uppercase font-bold"
+            class="swiper car_slider text-default-black uppercase font-bold w-full h-full"
           >
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+            <div class="swiper-wrapper py-10">
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-11.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-11.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-21.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-21.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-31.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-31.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-41.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-41.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-51.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-51.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-61.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-61.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-71.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-71.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-81.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-81.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-11.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-11.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
-            </div>
-            <div class="item relative">
-              <div class="car_img flex flex-col items-center justify-center">
-                <div class="relative">
-                  <div
-                    class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
-                  >
-                    <a href="#">
-                      <div
-                        class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
-                      >
+              <div class="item relative swiper-slide">
+                <div class="car_img flex flex-col items-center justify-center">
+                  <div class="relative">
+                    <div
+                      class="car_overlay flex justify-center items-center absolute inset-0 transition-all hover:bg-white/30"
+                    >
+                      <a href="#">
                         <div
-                          class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          class="round_btn transition-all opacity-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center w-16 h-16 rounded-full bg-gray-800/60"
                         >
-                          <i class="fa fa-link"></i>
+                          <div
+                            class="flex justify-center items-center bg-default-color w-12 h-12 rounded-full text-slate-50"
+                          >
+                            <i class="fa fa-link"></i>
+                          </div>
                         </div>
-                      </div>
-                    </a>
+                      </a>
+                    </div>
+                    <img class="w-full" src="./images/cars/car-91.jpg" alt="" />
                   </div>
-                  <img src="./images/cars/car-91.jpg" alt="" />
+                  <h3 class="car-title transition-all hover:text-default-color">
+                    <a href="#">Hire This Car</a>
+                  </h3>
                 </div>
-                <h3 class="car-title transition-all hover:text-default-color">
-                  <a href="#">Hire This Car</a>
-                </h3>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Section 3 -->
+    <!----------------------------------------->
+    <!----- Experience Section ----->
+    <!----------------------------------------->
     <section class="about pb-0">
-      <div class="about_top about_bg py-20">
+      <div class="about_top bg-about-bg bg-no-repeat bg-cover bg-center py-20">
         <div class="container">
           <div class="content">
             <div class="header">
@@ -663,6 +887,9 @@
       <div class="about_bottom bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
+            data-aos="fade-up"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="1000"
             class="content flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <h3 class="uppercase font-bold text-2xl text-center">
@@ -680,9 +907,13 @@
         </div>
       </div>
     </section>
-    <!-- Service -->
+    <!----------------------------------------->
+    <!----- Service Section ----->
+    <!----------------------------------------->
     <section class="py-0">
-      <div class="service_top service_bg py-14">
+      <div
+        class="service_top bg-service-bg bg-no-repeat bg-cover bg-center py-14"
+      >
         <div class="container">
           <div
             class="content flex flex-col justify-center items-center text-center gap-4"
@@ -702,7 +933,12 @@
           <div
             class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
           >
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-11.png" alt="icon" />
               </div>
@@ -720,7 +956,12 @@
                 >
               </div>
             </div>
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-21.png" alt="icon" />
               </div>
@@ -738,7 +979,12 @@
                 >
               </div>
             </div>
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-31.png" alt="icon" />
               </div>
@@ -756,7 +1002,12 @@
                 >
               </div>
             </div>
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-41.png" alt="icon" />
               </div>
@@ -774,7 +1025,12 @@
                 >
               </div>
             </div>
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-51.png" alt="icon" />
               </div>
@@ -792,7 +1048,12 @@
                 >
               </div>
             </div>
-            <div class="item flex gap-5">
+            <div
+              data-aos="fade-up"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="item flex gap-5"
+            >
               <div class="icon">
                 <img src="./images/service/service-icon-61.png" alt="icon" />
               </div>
@@ -814,7 +1075,9 @@
         </div>
       </div>
     </section>
-    <!-- Contact -->
+    <!----------------------------------------->
+    <!----- contact Section ----->
+    <!----------------------------------------->
     <section class="py-0 relative overflow-hidden">
       <video autoplay muted loop id="myVideo">
         <source
@@ -853,7 +1116,7 @@
 
           <a href="#">
             <button
-              class="text-sm xs:text-md bg-default-color capitalize font-merri py-1 px-2 xs:py-2 xs:px-3 md:py-3 md:px-5 rounded-sm"
+              class="text-sm xs:text-md md:text-xl bg-default-color capitalize font-merri py-1 px-2 xs:py-2 xs:px-3 md:py-3 md:px-5 rounded-sm"
             >
               Book online
             </button>
@@ -862,50 +1125,66 @@
       </div>
     </section>
 
-    <!-- Brand Names -->
+    <!----------------------------------------->
+    <!----- Brand Section ----->
+    <!----------------------------------------->
     <section class="brand py-4 bg-stone-200/70">
       <div class="container">
-        <div class="brand brand_slider">
-          <div class="brand_img flex justify-center items-center">
-            <img
-              class="w-full"
-              src="./images/carBrand/banner-11.png"
-              alt="banner"
-            />
-          </div>
-          <div class="brand_img flex justify-center items-center">
-            <img
-              class="w-full"
-              src="./images/carBrand/banner-21.png"
-              alt="banner"
-            />
-          </div>
-          <div class="brand_img flex justify-center items-center">
-            <img
-              class="w-full"
-              src="./images/carBrand/banner-31.png"
-              alt="banner"
-            />
-          </div>
-          <div class="brand_img flex justify-center items-center">
-            <img
-              class="w-full"
-              src="./images/carBrand/banner-41.png"
-              alt="banner"
-            />
-          </div>
-          <div class="brand_img flex justify-center items-center">
-            <img
-              class="w-full"
-              src="./images/carBrand/banner-51.png"
-              alt="banner"
-            />
+        <div class="brand brand_slider swiper">
+          <div class="swiper-wrapper">
+            <div
+              class="swiper-slide brand_img flex justify-center items-center"
+            >
+              <img
+                class="w-full"
+                src="./images/carBrand/banner-11.png"
+                alt="banner"
+              />
+            </div>
+            <div
+              class="swiper-slide brand_img flex justify-center items-center"
+            >
+              <img
+                class="w-full"
+                src="./images/carBrand/banner-21.png"
+                alt="banner"
+              />
+            </div>
+            <div
+              class="swiper-slide brand_img flex justify-center items-center"
+            >
+              <img
+                class="w-full"
+                src="./images/carBrand/banner-31.png"
+                alt="banner"
+              />
+            </div>
+            <div
+              class="swiper-slide brand_img flex justify-center items-center"
+            >
+              <img
+                class="w-full"
+                src="./images/carBrand/banner-41.png"
+                alt="banner"
+              />
+            </div>
+            <div
+              class="swiper-slide brand_img flex justify-center items-center"
+            >
+              <img
+                class="w-full"
+                src="./images/carBrand/banner-51.png"
+                alt="banner"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonial -->
+    <!----------------------------------------->
+    <!----- Testimonial Section ----->
+    <!----------------------------------------->
     <section>
       <div class="container">
         <div
@@ -929,20 +1208,26 @@
             <div class="flex justify-between">
               <h2 class="uppercase text-xl font-semibold">testimonial</h2>
               <div class="arrows flex gap-6">
-                <button>
+                <button class="testi_prev">
                   <i
-                    class="testi_prev flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-left"
+                    class="flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-left"
                   ></i>
                 </button>
-                <button>
+                <button class="testi_next">
                   <i
-                    class="testi_next flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-right"
+                    class="flex justify-center items-center border border-gray-500 h-6 w-6 rounded-full fa fa-arrow-right"
                   ></i>
                 </button>
               </div>
             </div>
             <!-- Sider -->
-            <div class="swiper testi_slider w-full h-full">
+            <div
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="1000"
+              class="swiper testi_slider w-full h-full"
+            >
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
@@ -1006,7 +1291,6 @@
                 </div>
               </div>
             </div>
-            <div class="testi_slider"></div>
           </div>
           <!-- News -->
           <div class="news flex flex-col gap-8">
@@ -1019,7 +1303,12 @@
               >
             </div>
             <div class="items grid gap-4">
-              <div class="item flex gap-4">
+              <div
+                data-aos="fade-up"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="800"
+                class="item flex gap-4"
+              >
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -1043,7 +1332,12 @@
                   >
                 </div>
               </div>
-              <div class="item flex gap-4">
+              <div
+                data-aos="fade-up"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1000"
+                class="item flex gap-4"
+              >
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -1067,7 +1361,12 @@
                   >
                 </div>
               </div>
-              <div class="item flex gap-4">
+              <div
+                data-aos="fade-up"
+                data-aos-easing="ease-in-out"
+                data-aos-duration="1200"
+                class="item flex gap-4"
+              >
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -1097,7 +1396,9 @@
       </div>
     </section>
 
-    <!-- Bottom section -->
+    <!----------------------------------------->
+    <!----- About Section ----->
+    <!----------------------------------------->
     <section class="bg-default-black text-zinc-600">
       <div class="container">
         <div
@@ -1242,7 +1543,9 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
+    <!----------------------------------------->
+    <!----- Footer Section ----->
+    <!----------------------------------------->
     <footer class="bg-zinc-900 py-4 text-sm">
       <div class="container">
         <div class="content flex justify-between flex-wrap gap-4">
@@ -1303,15 +1606,19 @@
 
     <!-- overlay -->
     <div
-      class="overlay absolute inset-0 -z-10 transition-all duration-500"
+      @click="navOpen = false"
+      x-bind:class="navOpen ? 'bg-black/70 z-[30]' : '-z-10'"
+      class="overlay absolute inset-0 transition-all duration-500"
     ></div>
-    <script src="./js/vendor/jquery.min.js"></script>
-    <script src="./js/vendor/owl.carousel.min.js"></script>
-    <script src="./js/vendor/slick.min.js"></script>
+    <!-- Adding CSS to output.css -->
+    <div
+      class="hidden left-0 bg-black/70 z-30 md:-z-10 animate-progress-90 animate-progress-95 animate-progress-100"
+    ></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
-
-<!--==================================================-->
-<!-----Start Portfolio Section ----->
-<!--===================================================-->

@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LimoKing</title>
     <!-- Fonts -->
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Montserrat Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- Merriweather Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap"
       rel="stylesheet"
@@ -23,11 +24,6 @@
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
-    <!-- Raleway font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -36,15 +32,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Progress Bar -->
-    <link rel="stylesheet" href="./js/vendor/jquery.lineProgressbar.css" />
-    <script src="./js/vendor/jquery.lineProgressbar.js"></script>
+    <!-- Swiper Slider -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+    <!-- AOS animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
+
+    <!-- Alpine js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
   </head>
 
-  <body class="text-slate-50 font-hind relative">
+  <!-- Title -->
+  <title>LimoKing</title>
+  <body x-data="{ navOpen: false }" class="text-slate-50 font-hind relative">
+    <!----------------------------------------->
+    <!----- Header Section ----->
+    <!----------------------------------------->
     <header class="z-40 relative">
       <!-- Header Top -->
       <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
@@ -54,7 +66,7 @@
           >
             <!-- Logo -->
             <div
-              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center"
+              class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
               <a href="#">
                 <img
@@ -66,7 +78,7 @@
             </div>
             <!-- Contact Info -->
             <div
-              class="contact-info w-full flex flex-col sm:flex-row md:flex-col md:gap-2 justify-center gap-2 md:justify-between items-center md:items-end md:col-span-1"
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col justify-center gap-2 sm:gap-6 md:justify-between items-center md:items-end md:col-span-1"
             >
               <div class="number flex items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
@@ -83,16 +95,25 @@
         </div>
       </div>
     </header>
-    <!-- Navbar -->
-    <nav class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl">
+    <!----------------------------------------->
+    <!----- Nav Section ----->
+    <!----------------------------------------->
+    <nav
+      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+    >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
         <div class="container flex justify-end">
-          <div class="float-right flex gap-20 md:gap-56 pt-5 text-zinc-300">
+          <div class="flex gap-32 lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
-              <ul class="nav_links flex justify-center items-center gap-5">
+              <ul
+                x-data="{active: 'service'}"
+                class="nav_links flex justify-center items-center lg:gap-5"
+              >
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'home'"
+                    x-bind:class="active === 'home' ? 'active_link': '' "
                     href="index.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >home</a
@@ -100,6 +121,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'about'"
+                    x-bind:class="active === 'about' ? 'active_link': '' "
                     href="about.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >about us</a
@@ -107,6 +130,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'ourFeet'"
+                    x-bind:class="active === 'ourFeet' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >our fleet</a
@@ -114,13 +139,17 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'serivce'"
+                    x-bind:class="active === 'service' ? 'active_link': '' "
                     href="rate.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color active_link"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >service rate</a
                   >
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'portfolio'"
+                    x-bind:class="active === 'portfolio' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >portfolio</a
@@ -128,6 +157,8 @@
                 </li>
                 <li class="flex justify-center items-center">
                   <a
+                    x-on:click="active = 'blog'"
+                    x-bind:class="active === 'blog' ? 'active_link': '' "
                     href="#"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
                     >blog</a
@@ -136,8 +167,8 @@
               </ul>
             </div>
             <!-- Search Button -->
-            <div class="search relative z-50">
-              <button class="search_button">
+            <div x-data="{ open: false }" class="search relative z-50">
+              <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
                   src="./images/header/magnifier-light.png"
@@ -145,6 +176,7 @@
                 />
               </button>
               <div
+                x-bind:class="open ? 'h_16':'' "
                 class="search_input absolute flex justify-center items-center px-4 bg-zinc-900/80 backdrop-blur-2xl top-full right-0 w-48 h-0 transition-all duration-500"
               >
                 <input
@@ -158,7 +190,7 @@
         </div>
       </div>
 
-      <!-- Small Screen -->
+      <!-- Nav Small Screen -->
       <div class="md:hidden bg-default-black backdrop-blur-3xl">
         <div class="container">
           <div class="flex justify-between items-center py-3 sm:py-5">
@@ -168,6 +200,7 @@
             <div class="nav">
               <!-- Nav btn -->
               <div
+                @click="navOpen = !navOpen"
                 class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
               >
                 <span class="line w-8 h-[3px] bg-slate-200"></span>
@@ -176,19 +209,23 @@
               </div>
               <!-- Nav links -->
               <ul
+                x-bind:class="navOpen ? 'left_0' : '' "
                 class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
               >
                 <li><a href="index.html">home</a></li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="about.html"
                     class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                    ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
+                    ><span>about us</span
+                    ><i class="fa-solid fa-arrow-right"></i>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="rate.html"
+                    @click="navOpen = false"
+                    href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>our fleet</span>
                     <i class="fa-solid fa-arrow-right"></i
@@ -197,6 +234,7 @@
                 <li><a href="rate.html">service rate</a></li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>portfolio</span>
@@ -205,6 +243,7 @@
                 </li>
                 <li>
                   <a
+                    @click="navOpen = false"
                     href="#"
                     class="border-bottom flex justify-between items-center"
                     ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
@@ -216,10 +255,13 @@
         </div>
       </div>
     </nav>
-
-    <!-- Main -->
+    <!----------------------------------------->
+    <!-----Main Section ----->
+    <!----------------------------------------->
     <main>
-      <div class="wrapper rate_main_bg -mt-[61px] pt-[8rem] pb-[4.5rem]">
+      <div
+        class="wrapper bg-rate-main-bg bg-center bg-cover bg-no-repeat -mt-[61px] pt-[8rem] pb-[4.5rem]"
+      >
         <div class="container text-center h-full">
           <h1 class="h-full capitalize font-semibold text-4xl md:text-6xl">
             service rate
@@ -227,14 +269,15 @@
         </div>
       </div>
     </main>
-
-    <!-- Section 1 -->
+    <!----------------------------------------->
+    <!-----Rate Section ----->
+    <!----------------------------------------->
     <section>
-      <div class="container text-stone-700 py-6 grid justify-center items-center">
+      <div class="container text-stone-700 py-6 grid text-center">
         <!-- Large Screen Content -->
-        <div class="hidden large_content md:flex justify-between gap-6">
+        <div class="hidden large_content md:grid grid-cols-4">
           <!-- Cars -->
-          <div class="cars mt-32">
+          <div class="cars mt-32 col-span-1">
             <div
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
@@ -364,11 +407,11 @@
           </div>
 
           <!-- Pricing -->
-          <div class="pricing flex gap-1">
+          <div class="pricing grid grid-cols-3 gap-1 col-span-3">
             <div class="item_1">
               <!-- Title -->
               <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-color polygon"
+                class="title flex flex-col gap-1 items-center h-32 bg-default-color polygon"
               >
                 <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
                   per hour rate
@@ -504,7 +547,7 @@
             <div class="item_2">
               <!-- Title -->
               <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-black polygon"
+                class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
               >
                 <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
                   per day rate
@@ -651,7 +694,7 @@
             <div class="item_3">
               <!-- Title -->
               <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-black polygon"
+                class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
               >
                 <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
                   AIRPORT TRANSFER
@@ -786,266 +829,366 @@
           </div>
         </div>
         <!-- Small Screen Content -->
-        <div class="md:hidden small_cotent grid gap-10">
-          <div class="item_1 flex gap-6">
-            <!-- Cars -->
-            <div class="cars mt-32">
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-11.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
+        <div class="md:hidden small_cotent grid gap-10 text-center">
+          <div class="item_1 flex flex-col gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-color polygon"
+                >
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    per hour rate
+                  </h3>
+                  <span class="text-sm text-slate-50">eg. Event, Party</span>
                 </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-21.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-31.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-41.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-51.jpg"
-                  alt="car-51"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-61.jpg"
-                  alt="car-61"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-71.jpg"
-                  alt="car-71"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-81.jpg"
-                  alt="car-81"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-91.jpg"
-                  alt="car-91"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <!-- Prices -->
-            <div class="prices">
-              <!-- Title -->
-              <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-color polygon"
-              >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
-                  per hour rate
-                </h3>
-                <span class="text-sm text-slate-50">eg. Event, Party</span>
-              </div>
-              <!-- Prices -->
-              <div class="prices">
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$89</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$59</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $59
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$69</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $69
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$79</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $59
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$89</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $109
                       </h3>
-                      <span class="uppercase text-lg">/ hour</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $129
                       </h3>
-                      <span class="uppercase text-lg">/ hour</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $119
                       </h3>
-                      <span class="uppercase text-lg">/ hour</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">$99</h3>
-                      <span class="uppercase text-lg">/ hour</span>
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $99
+                      </h3>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ hour</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
                 <!-- Book btn -->
-                <a href="#" class="">
+                <a href="#" class="col-start-2 col-end-3">
                   <button
                     class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
                   >
@@ -1055,559 +1198,716 @@
               </div>
             </div>
           </div>
-          <div class="item_2 flex gap-6">
-            <!-- Cars -->
-            <div class="cars mt-32">
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-11.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-21.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-31.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-41.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-51.jpg"
-                  alt="car-51"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-61.jpg"
-                  alt="car-61"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-71.jpg"
-                  alt="car-71"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-81.jpg"
-                  alt="car-81"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-91.jpg"
-                  alt="car-91"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <!-- Prices -->
-            <div class="prices">
-              <!-- Title -->
-              <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-black polygon"
-              >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
-                  per day rate
-                </h3>
-                <span class="text-sm text-stone-400"
-                  >eg. Wedding, Long trip</span
+          <div class="item_2 flex flex-col items-end gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
                 >
-              </div>
-              <!-- Prices -->
-              <div class="prices">
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    per day rate
+                  </h3>
+                  <span class="text-sm text-stone-400"
+                    >eg. Wedding, Long trip</span
+                  >
+                </div>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $579
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $489
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $489
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $449
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $539
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $799
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-500 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-400"
                       >*Not Available</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $779
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $799
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $599
                       </h3>
-                      <span class="uppercase text-lg">/ day</span>
+                      <span class="uppercase text-md text-md sm:text-lg"
+                        >/ day</span
+                      >
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*$3/hour Fuel Sercharge</span
                     >
                   </div>
                 </div>
+                <!-- Book btn -->
+                <a href="#" class="col-start-2 col-end-3">
+                  <button
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  >
+                    book now
+                  </button>
+                </a>
               </div>
-              <!-- Book btn -->
-              <a href="#" class="">
-                <button
-                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
-                >
-                  book now
-                </button>
-              </a>
             </div>
           </div>
-          <div class="item_3 flex gap-6">
-            <!-- Cars -->
-            <div class="cars mt-32">
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-11.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
+          <div class="item_3 flex flex-col items-end gap-6">
+            <!-- Cars ** & Rates ** -->
+            <!-- cars -->
+            <div class="car_rate_wrapper">
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- Title -->
+                <div
+                  class="title px-2 col-start-2 col-end-3 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
+                >
+                  <h3
+                    class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                  >
+                    AIRPORT TRANSFER
+                  </h3>
+                  <span class="text-sm text-stone-400">*Flat Rate</span>
                 </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-21.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-11.jpg"
+                    alt="car-11"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN MKT
+                      </h4>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-31.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-41.jpg"
-                  alt="car-11"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-51.jpg"
-                  alt="car-51"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-61.jpg"
-                  alt="car-61"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-71.jpg"
-                  alt="car-71"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-81.jpg"
-                  alt="car-81"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-              <div
-                class="car h-[5.813rem] flex gap-4 justify-center items-center"
-              >
-                <img
-                  class="max-w-[4.9rem]"
-                  src="./images/cars/car-91.jpg"
-                  alt="car-91"
-                />
-                <div class="name">
-                  <h4 class="uppercase font-semibold text-md">
-                    BLACK LINCOLN MKT
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <!-- Prices -->
-            <div class="prices">
-              <!-- Title -->
-              <div
-                class="title flex flex-col gap-1 items-center w-36 sm:w-44 md:w-64 h-32 bg-default-black polygon"
-              >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
-                  AIRPORT TRANSFER
-                </h3>
-                <span class="text-sm text-stone-400">*Flat Rate</span>
-              </div>
-              <!-- Prices -->
-              <div class="prices">
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
                         $119-139
                       </h3>
                     </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $89-109
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $89-109
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $89-109
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $99-$129
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >* Not Available</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $150-$190
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >*depend on picking up area</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-stone-400 font-bold text-3xl">-</h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
-                      >* Not Available</span
-                    >
-                  </div>
-                </div>
-                <!-- Price -->
-                <div class="price py-4 border-b border-stone-300">
-                  <div class="rate text-center">
-                    <div class="flex items-end justify-center gap-1">
-                      <h3 class="text-default-color font-bold text-3xl">
-                        $120-150
-                      </h3>
-                    </div>
-                    <span class="text-[.9rem] text-stone-500"
+                    <span class="text-sm xs:text-md text-stone-500"
                       >*depend on picking up area</span
                     >
                   </div>
                 </div>
               </div>
-              <!-- Book btn -->
-              <a href="#" class="">
-                <button
-                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
-                  book now
-                </button>
-              </a>
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-21.jpg"
+                    alt="car-21"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK LINCOLN SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-31.jpg"
+                    alt="car-31"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES GRAND SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-41.jpg"
+                    alt="car-41"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        BLACK CADILLAC SEDAN
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $89-109
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-51.jpg"
+                    alt="car-51"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        CADILLAC ESCALADE LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $99-$129
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-61.jpg"
+                    alt="car-61"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        LINCOLN STRETCH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-400 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-71.jpg"
+                    alt="car-71"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        HUMMER STRECTH LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $150-$190
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-81.jpg"
+                    alt="car-81"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        FORD PARTY BUS LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3 class="text-stone-400 font-bold text-2xl sm:text-3xl">
+                        -
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*Not Available</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Last item with button -->
+              <!-- car&rate -->
+              <div class="grid grid-cols-2 gap-x-2">
+                <!-- car -->
+                <div
+                  class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
+                >
+                  <img
+                    class="max-w-[5rem]"
+                    src="./images/cars/car-91.jpg"
+                    alt="car-91"
+                  />
+                  <div class="name">
+                    <a href="#">
+                      <h4 class="uppercase font-semibold text-sm xs:text-md">
+                        MERCEDES PARTY LIMO
+                      </h4>
+                    </a>
+                  </div>
+                </div>
+                <!-- rate -->
+                <div class="rate py-4 border-b border-stone-300">
+                  <div class="rate-wrapper flex flex-col gap-2 sm:gap-0">
+                    <div class="flex justify-center items-center">
+                      <h3
+                        class="text-default-color font-bold text-2xl sm:text-3xl"
+                      >
+                        $120-150
+                      </h3>
+                    </div>
+                    <span class="text-sm xs:text-md text-stone-500"
+                      >*depend on picking up area</span
+                    >
+                  </div>
+                </div>
+                <!-- Book btn -->
+                <a href="#" class="col-start-2 col-end-3">
+                  <button
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  >
+                    book now
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Section 2 -->
-    <section class="about p-0">
-      <div class="about_top about_bg py-20">
+    <!----------------------------------------->
+    <!-----Experience Section ----->
+    <!----------------------------------------->
+    <section class="p-0">
+      <div class="about_top bg-about-bg bg-center bg-cover bg-no-repeat py-20">
         <div class="container">
           <div class="content">
             <div class="header">
@@ -1636,7 +1936,9 @@
         </div>
       </div>
     </section>
-    <!-- Bottom section -->
+    <!----------------------------------------->
+    <!-----About Section ----->
+    <!----------------------------------------->
     <section class="bg-default-black text-zinc-600">
       <div class="container">
         <div
@@ -1781,7 +2083,9 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
+    <!----------------------------------------->
+    <!-----Footer Section ----->
+    <!----------------------------------------->
     <footer class="bg-zinc-900 py-4 text-sm">
       <div class="container">
         <div class="content flex justify-between flex-wrap gap-4">
@@ -1842,15 +2146,10 @@
 
     <!-- overlay -->
     <div
-      class="overlay absolute inset-0 -z-10 transition-all duration-500"
+      @click="navOpen = false"
+      x-bind:class="navOpen ? 'bg-black/70 z-30' : '-z-10'"
+      class="overlay absolute inset-0 transition-all duration-500"
     ></div>
-    <script src="./js/vendor/jquery.min.js"></script>
-    <script src="./js/vendor/owl.carousel.min.js"></script>
-    <script src="./js/vendor/slick.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
-
-<!--==================================================-->
-<!-----Start Portfolio Section ----->
-<!--===================================================-->
