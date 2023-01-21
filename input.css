@@ -28,6 +28,9 @@ img {
 .nav ul li:hover  > .submenu {
   @apply opacity-100 visible
 }
+.nav ul li:hover  > a {
+  @apply text-zinc-100
+}
 .car_overlay:hover .round_btn {
   @apply opacity-100;
 }
@@ -51,7 +54,7 @@ main:hover .swiper-pagination {
   @apply opacity-100;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .next,
   .prev {
     @apply hidden;

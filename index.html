@@ -51,7 +51,7 @@
 
   <!-- Title -->
   <title>LimoKing</title>
-  <body x-data="{ navOpen: false }" class="text-slate-50 font-hind relative">
+  <body x-data="{ navOpen: false }" :class="navOpen ? 'overflow-hidden' : 'overflow-visible' " class="text-slate-50 font-hind relative">
     <!----------------------------------------->
     <!----- Header Section ----->
     <!----------------------------------------->
@@ -127,68 +127,68 @@
                   >
                   <!-- Sub menu -->
                   <ul
-                    class="submenu absolute top-full bg-zinc-900/90 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                    class="submenu absolute top-full bg-zinc-800 z-50 capitalize opacity-0 invisible transition-all duration-500"
                   >
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >About us</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >About us 2</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >service</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >personal</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
                         >faq</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >contact page</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >gallery</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >404 page</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-slate-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-slate-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
                         >testimonial</a
                       >
                     </li>
@@ -205,47 +205,47 @@
                   >
                   <!-- Sub menu -->
                   <ul
-                    class="submenu absolute top-full bg-zinc-900/90 z-50  capitalize opacity-0 invisible transition-all duration-500"
+                    class="submenu absolute top-full bg-zinc-800 z-50  capitalize opacity-0 invisible transition-all duration-500"
                   >
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >Fleet 2 Columns</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >Fleet 3 Columns</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >Fleet 4 Columns</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20"
                         >Fleet Modern 2 Columns</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-slate-400/20 uppercase"
                         >Fleet Modern 3 Columns</a
                       >
                     </li>
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-slate-50 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
                         >Fleet Modern 4 Columns</a
                       >
                     </li>
@@ -392,42 +392,524 @@
             <!-- Nav links -->
             <ul
               x-bind:class="navOpen ? 'left_0' : '' "
-              class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
+              class="nav_small absolute max-w-[70%] sm:max-w-[40%] px-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
             >
-              <li><a href="index.html">home</a></li>
-              <li>
+        <ul
+        :class="navOpen ? 'overflow-auto' : '' "
+          class="text-white uppercase py-2 flex flex-col items-start bg-default-small-nav"
+        >
+          <!-- Home -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-b-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex py-2"
+                >home</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
                 <a
-                  @click="navOpen = false"
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >home page 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >home page 02</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >about</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- About -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./about.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex"
+                >pages</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
                   href="about.html"
-                  class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                  ><span>about us</span><i class="fa-solid fa-arrow-right"></i>
-                </a>
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >about us</a
+                >
               </li>
-              <li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
                 <a
-                  @click="navOpen = false"
+                  @click="nav = false"
                   href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>our fleet</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >our team</a
+                >
               </li>
-              <li><a href="rate.html">service rate</a></li>
-              <li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
                 <a
-                  @click="navOpen = false"
-                  href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>portfolio</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >testimonials</a
+                >
               </li>
-              <li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
                 <a
-                  @click="navOpen = false"
-                  href="#"
-                  class="border-bottom flex justify-between items-center"
-                  ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
-                ></a>
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >faq's</a
+                >
               </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >gallery one</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >gallery two</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- services -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-y-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex"
+                >services</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >our services</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >residential water</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >commercial water</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >filtration plants</a
+                >
+              </li>
+
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >water softening</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >Market Research</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- elements -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex"
+                >elements</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >feature block 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >feature block 02</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >about block 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >services 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >news block 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >team block 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >cta block 01</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >pricing block</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >chooseus block</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- shop -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-y-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex"
+                >shop</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >shop</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >cart</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >checkout</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >my account</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- blog -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-b-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-cyan-400 transition-all duration-300 w-full flex"
+                >blog</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-default-black/70 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-default-black/70"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >blog grid</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >blog standard</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-10 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-cyan-400 transition-all duration-300"
+                  >blog single</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- contact -->
+          <li
+            class="flex border-b-[1px] border-stone-600/20 py-2 w-full pl-4 capitalize"
+          >
+            <a
+              @click="nav = false"
+              href="./about.html"
+              class="hover:text-cyan-400 transition-all duration-300"
+              >contact</a
+            >
+          </li>
+
+        </ul>
+
             </ul>
           </div>
         </div>
@@ -483,14 +965,14 @@
             class="swiper-slide relative bg-two-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center"
           >
             <div
-              class="content grid gap-2 slide_2 absolute top-1/2 left-[25%] transform -translate-x-[25%] -translate-y-1/2"
+              class="content grid gap-2 slide_2 absolute top-[55%] left-[25%] transform -translate-x-[25%] -translate-y-[55%]"
             >
               <h1
                 class="first text-xl xs:text-3xl sm:text-4xl md:text-5xl font-bold"
               >
                 We Are #1 Limo Services
               </h1>
-              <p class="second text-slate-200 text-sm md:text-md">
+              <p class="second text-slate-200 text-sm xs:text-base">
                 Limos King offers superb limo service in New York and
                 Manhatatan. &nbsp;We are the most popular and has <br />been
                 chosen by many important people. We also provide premier service
@@ -500,7 +982,7 @@
               <div class="third btn capitalize font-merri mt-6">
                 <a
                   href="#"
-                  class="bg-default-color text-sm md:text-md py-2 px-3 sm:py-3 sm:px-5 rounded-md"
+                  class="bg-default-color text-sm xs:text-lg py-2 px-3 sm:py-3 sm:px-5 rounded-md"
                   >see our fleet</a
                 >
               </div>
@@ -510,10 +992,10 @@
           <!-- Slide 3 -->
 
           <div
-            class="swiper-slide bg-three-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center relative"
+            class="swiper-slide bg-three-bg min-h-[70vh] md:min-h-screen w-full bg-cover bg-center"
           >
             <div
-              class="content slide_3 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4 items-center text-4xl sm:text-5xl md:text-7xl capitalize font-semibold w-full"
+              class="content slide_3 absolute top-[65%] left-1/2 transform -translate-x-1/2 -translate-y-[65%] flex flex-col gap-4 items-center text-4xl sm:text-5xl md:text-7xl capitalize font-semibold w-full"
             >
               <h1 class="first">give yourself</h1>
               <span
